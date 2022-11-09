@@ -29,3 +29,6 @@ const myData=getData();
 function loadGridItems(){
     console.log(myData);
 }
+
+//Loaded the item
+loadGridItems();
