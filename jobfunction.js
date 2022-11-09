@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 //Get JSON File
 
 async function getData(){
