@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 //Get JSON File
 
 async function getData(){
@@ -16,11 +16,14 @@ async function getData(){
 
 }
 
+
+const myData=getData();
+
+
 function loadGridItems(){
     console.log(myData);
 }
 
-const myData=getData();
 
 //Loaded the item
 loadGridItems();
