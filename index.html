@@ -12,7 +12,7 @@
     <header id="header_container">
         <div id="img_container" class="img_head1"></div>
         <div id="caption_container">
-            <div id="dev_caption" class="bold_font_xl bold_size_28 font-color-white">devjobs</div>
+            <div id="dev_caption" class="bold_font_90 font_size_28 font-color-white">devjobs</div>
             <div id="theme_container">
                 <div id="day" class="img_sun"></div>
                 <input id="mode_button"type="checkbox">
@@ -20,20 +20,19 @@
             </div>
         </div>
         <div id="search_container">
-            <div id="search_bar">
+            <div id="search_filter">
                 <div id="search_img"></div>
-                <input id="search_id"type="text" value="">
+                <input id="search_text" class="normal_font" type="text" value="" placeholder="Filter by title,company,expertise...">
             </div>
-            <div id="location_bar">
+            <div id="location_filter">
                 <div id="location_img"></div>
-                <input id="location_Id" idtype="text" value="">
+                <input id="location_text" class="normal_font" type="text" value="" placeholder="Filter by location...">
             </div>
-            <div id="fulltime_bar">
-                <div id="location_img"></div>
-                <input id="full_partId"type="checkbox" value=""> 
-                
-            </div>
-            
+            <div id="fulltime_filter">
+                <input id="full_part" class="" type="checkbox" value="None"> 
+                <label for="full_part" id="lblfulltime" class="bold_font_70 font_size_16">Full Time Only</label>
+                <button id="btnSearch" class="bold_font_70 font_size_16">Search</button>
+            </div> 
         </div>
     </header>
     

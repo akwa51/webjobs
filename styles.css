@@ -1,27 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
+*,html{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Kumbh Sans', sans-serif;
+}
+
 body{
     width: 100vw;
     height:100vh;
-    overflow: hidden;
-    margin:auto;
-    border: 0;
+    background-color: #f4f6f8;
+    /* overflow-x: hidden; */
+    padding:0px;
+    margin: 0 auto;
 }
 
 
 /* font sizes */
 
-.bold_size_28{
+.font_size_28{
     line-height: 34px;
     font-size: 28px;
 }
 
+.font_size_16{
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.normal_font{
+   font-size: 16px;
+   line-height: 26px;
+}
+
 /* font family */
-.bold_font_xl{
-    font-family:'Kumbh Sans', sans-serif;
+.bold_font_90{
     font-style: normal;
     font-weight: 900;
 }
+
+.bold_font_70{
+    font-style: normal;
+    font-weight: 700;
+}
+
 
 /* Colors */
 
@@ -29,13 +52,24 @@ body{
     color:#FFFFFF;
 }
 
+.font-color-violet{
+    color:#9e7f66;
+}
+
 
 /* Header Caption and Theme */
+
+ /* #header_container{
+    background-attachment: fixed;
+}  */
+
 .img_head1{
    background: url(./starter-code/assets/desktop/bg-pattern-header.svg); 
    background-repeat: no-repeat;
-   width: 100%;
+   background-size: 100% auto;
+   width: 100vw;
    height:162px;
+  /* margin:0 auto; */
 }
 
 .img_sun{
@@ -70,6 +104,7 @@ body{
     height: 24px;
     position: relative;
     appearance: none;
+    mix-blend-mode: normal;
     background-color: #ffffff;
     margin:auto 8px;
     border-radius: 12px;
@@ -109,4 +144,109 @@ body{
     top:45px;
     left: 165px;
     align-content: center;
+}
+
+/* head search bar */
+#search_img{
+    background: url(./starter-code/assets/desktop/icon-search.svg);
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+    margin-left: 32px;
+}
+
+#search_text{
+    width: 276px;
+    height: 24px;
+    border: none;
+}
+
+#search_filter{
+    border-right: 1px solid #6E8098;
+    height: 80px;
+    width: 463px;
+    display: flex;
+    align-items: center;
+}
+
+/* head location bar */
+#location_img{
+    background: url(./starter-code/assets/desktop/icon-location.svg);
+    background-repeat: no-repeat; 
+    height: 24px;
+    width: 17px;
+    margin-left: 23px;
+    margin-right: 16px;
+    /* border: 1px solid black; */
+}
+
+#location_filter{
+    width:300px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+#location_text{
+    width:135px;
+    height: 24px;
+    border: none;
+    /* border: 1px solid black; */
+}
+
+/* fulltime filter */
+#full_part{
+    width: 24px;
+    height: 24px;
+    margin-left: 32px;
+    border-radius: 3px;
+    background: #19202d;
+    /* accent-color:#0d169c; */
+    /* accent-color:#19202d;
+      mix-blend-mode: normal;*/
+    opacity: 0.1;
+    cursor: pointer;
+   }
+
+   #full_part:checked::before{
+    accent-color: #19202d;
+    }
+
+
+#lblfulltime{
+    width: 110px;
+    height: 16px;
+    margin-left: 16px;
+}
+
+#btnSearch{
+    width: 123px;
+    height: 48px;
+    /* background-color: #3e27d1; */
+    background-color: #5964E0;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: #5964E0;
+    margin-left: 26px;
+    
+}
+
+#fulltime_filter{
+    width: 345px;
+    height: 80px;
+    border-left:1px solid #6e8098;
+    display: flex;
+    align-items: center;
+}
+
+/* search container */
+#search_container{
+    display: flex;
+    position: absolute;
+    top:120px;
+    left:165px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
 }
