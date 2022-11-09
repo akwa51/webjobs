@@ -16,20 +16,11 @@ async function getData(){
 
 }
 
-const myData=getData();
-
-
-
-// const myJSON=require(./starter-code/assets/)
-
-
-// Load Items from JSON file and Append to Grid
-
-// const myJobRecords=JSON.parse();
-
 function loadGridItems(){
     console.log(myData);
 }
+
+const myData=getData();
 
 //Loaded the item
 loadGridItems();
