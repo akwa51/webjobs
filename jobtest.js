@@ -24,16 +24,4 @@ function getNetworkEl(){
 }
 
 getNetworkEl();
-// function getData(){
-//     fetch(url)
-// 	.then(res=>res.json())
-// 	.then(dat=>{
-// 	  console.log(data);
-// 	})
-//     .catch((error)=>{
-//         console.log (error);
-//     })
-// }
-
-// getData();
 

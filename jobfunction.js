@@ -1,10 +1,10 @@
 // import fetch from "node-fetch";
 //Get JSON File
-let myData1=loadJSON ('./starter-code/data.json');
-let newResult=JSON.parse(myData1);
+// let myData1=loadJSON ('./starter-code/data.json');
+// let newResult=JSON.parse(myData1);
 
 
-console.log(newResult);
+// console.log(newResult);
 
 
 // async function getData(){

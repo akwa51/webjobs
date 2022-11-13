@@ -93,9 +93,9 @@ body{
 #theme_container{
     display: flex;
     justify-content: space-between;
+    align-self: center;
     height: 24px;
     width: 112px;
-    align-self: center;
 }
 
 #mode_button{
@@ -206,7 +206,7 @@ body{
     /* accent-color:#0d169c; */
     /* accent-color:#19202d;
       mix-blend-mode: normal;*/
-    opacity: 0.1;
+    opacity: 0.5;
     cursor: pointer;
    }
 
@@ -249,4 +249,8 @@ body{
     left:165px;
     background-color: #FFFFFF;
     border-radius: 6px;
+}
+
+#job_grid{
+    
 }
