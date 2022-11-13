@@ -1,25 +1,39 @@
 //Get JSON File
-//const url="starter-code/data.json";
-const url='data.json';
 
-function getData(){
-    fetch(url)
-	.then(res=>res.json())
-	.then(dat=>{
-	  console.log(data);
-	})
-    .catch((error)=>{
-        console.log (error);
-    })
+///Loading JSON without fetch method
+
+import Jobs from './starter-code/data.json' assert {type:'json'};
+
+// Jobs=JSON.parse(Jobs);
+
+// console.log(Jobs);
+// console.log(Jobs[0])
+
+
+function getNetworkEl(){
+    let myResult=document.getElementById('json_data');
+
+    if (myResult){
+        myResult.innerHTML=Jobs[0].requirements.content;
+    }else{
+        console.log(Jobs);
+    }
+    myResult.style.width="300px";
+    myResult.style.height='auto';
+    myResult.style.margin="100px auto";
 }
 
-getData();
+getNetworkEl();
+// function getData(){
+//     fetch(url)
+// 	.then(res=>res.json())
+// 	.then(dat=>{
+// 	  console.log(data);
+// 	})
+//     .catch((error)=>{
+//         console.log (error);
+//     })
+// }
 
-//function loadGridItems(){
-//    console.log(myData);
-//}
+// getData();
 
-//const myData=getData();
-
-//Loaded the item
-//loadGridItems();
