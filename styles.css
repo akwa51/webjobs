@@ -266,8 +266,8 @@ body{
 }
 
 .jobSubItem{
-    height: 228;
-    width: 350px;
+    height: 226;
+    width: 348px;
     position:relative;
     margin-top: 25px;
     background-color:#FFFF;
@@ -282,7 +282,9 @@ body{
     width: 263px;
     border:1px solid greenyellow;
     position: relative;
-    margin-top: 74px;
+    margin-top: 49px;
+    margin-bottom: 28px;
+    margin-left: 32px;
 }
 
 .logoBag{
