@@ -251,6 +251,48 @@ body{
     border-radius: 6px;
 }
 
-#job_grid{
-    
+
+/* Main Section Styling */
+#mid_Container{
+    margin:80px 165px;
 }
+
+/* Job Item Container */
+.jobItem{
+    height: 253px;
+    width: 350px;
+    position: relative;
+    border:1px solid red;
+}
+
+
+/* Job Bag Container */
+.jobBag{
+    height: 147px;
+    width: 263px;
+    border:1px solid greenyellow;
+    position: relative;
+    margin-top: 49px;
+}
+
+.logoBag{
+    width: 50px;
+    height: 50px;
+    top:0px;
+    left: 32px;
+    position:absolute;
+    /* border: 1px solid blue; */
+}
+
+/* Company List Styling */
+.scoot{
+    background-color: #e99210;
+    border-radius: 15px;
+}
+
+.scoot_Size{
+    width: 40px;
+    height: 11.42px;
+    margin:19px auto; 
+}
+
