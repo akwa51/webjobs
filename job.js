@@ -69,6 +69,39 @@ function loadJobListings(){
         jobBag.classList.add('jobBag');
         mySubItem.appendChild(jobBag);
 
+        //create Job advert items
+        //Job Posting Status
+        let jobStatus=document.createElement('div');
+        jobStatus.classList.add('jobStatus');
+        
+        let sTime=document.createElement('span');
+        sTime.innerHTML=Jobs[i].postedAt;
+        sTime.classList.add('font_16_2','font_40','font-color-gray','sTime');
+
+        let sPoint=document.createElement('div');
+        sPoint.classList.add('sPoint');
+
+        let sType=document.createElement('span');
+        sType.classList.add('font_16_2','font_40','font-color-gray','sType');
+        sType.innerHTML=Jobs[i].contract;
+
+        jobStatus.appendChild(sTime);
+        jobStatus.appendChild(sPoint);
+        jobStatus.appendChild(sType);
+        jobBag.appendChild(jobStatus);
+
+        //Job Specialty
+        let jobSpecialty=document.createElement('div');
+        jobSpecialty.setAttribute('id','p'+Jobs[i].id);
+        jobSpecialty.classList.add('jobSpecialty','font-color-2','bold_font_70');
+        jobSpecialty.innerHTML=Jobs[i].position;
+        jobBag.appendChild(jobSpecialty);
+
+
+        //Company Name
+        let company=document.createElement('div');
+        jobBag.appendChild(company);
+
     }
 
 }
