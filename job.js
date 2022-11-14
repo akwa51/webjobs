@@ -35,7 +35,7 @@ function loadJobListings(){
 
     for (let i=0;i<1;i++){
 
-        //Create job Item Container
+        //Create job Item Main Container
         let grid_Item =document.createElement('div');
         grid_Item.setAttribute('id',Jobs[i].id);
         grid_Item.classList.add('jobItem');
@@ -53,18 +53,21 @@ function loadJobListings(){
 
         //create Logo container
         let myUrl='./starter-code/assets/logos/'+coLogo+'.svg';
-
         let myLogo=document.createElement('div');
         myLogo.style.background='url('+ myUrl +') no-repeat';
         logoBackg.appendChild(myLogo);
-
         myLogo.classList.add(coLogo+'_Size');
+
+        //Create Job sub Item Container
+        let mySubItem=document.createElement('div');
+        mySubItem.classList.add('jobSubItem');
+        grid_Item.appendChild(mySubItem);
 
 
         //create Job advert container
         let jobBag=document.createElement('div');
         jobBag.classList.add('jobBag');
-        grid_Item.appendChild(jobBag);
+        mySubItem.appendChild(jobBag);
 
     }
 

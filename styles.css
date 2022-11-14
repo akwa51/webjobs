@@ -265,6 +265,16 @@ body{
     border:1px solid red;
 }
 
+.jobSubItem{
+    height: 228;
+    width: 350px;
+    position:relative;
+    margin-top: 25px;
+    background-color:#FFFF;
+    border:1px solid blueviolet;
+    font-size: 0px;
+}
+
 
 /* Job Bag Container */
 .jobBag{
@@ -272,7 +282,7 @@ body{
     width: 263px;
     border:1px solid greenyellow;
     position: relative;
-    margin-top: 49px;
+    margin-top: 74px;
 }
 
 .logoBag{
@@ -281,6 +291,7 @@ body{
     top:0px;
     left: 32px;
     position:absolute;
+    z-index: 3;
     /* border: 1px solid blue; */
 }
 
