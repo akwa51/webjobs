@@ -150,3 +150,14 @@ function getLogoBackColor(cName){
     }
 }
 
+
+function jobSearchFilter (){
+    let mySearch=Jobs.filter(stritem=>{
+        stritem.contract=='Full Time';
+    });
+
+    console.log(mySearch);
+}
+
+
+jobSearchFilter();
