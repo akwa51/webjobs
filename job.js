@@ -4,27 +4,6 @@
 
 import Jobs from './starter-code/data.json' assert {type:'json'};
 
-// Jobs=JSON.parse(Jobs);
-
-// console.log(Jobs);
-// console.log(Jobs[0])
-
-
-// function getNetworkEl(){
-//     let myResult=document.getElementById('json_data');
-
-//     if (myResult){
-//         myResult.innerHTML=Jobs[0].requirements.content;
-//     }else{
-//         console.log(Jobs);
-//     }
-//     myResult.style.width="300px";
-//     myResult.style.height='auto';
-//     myResult.style.margin="100px auto";
-// }
-
-// getNetworkEl();
-
 //Function to Load Job Grid Items
 function loadJobListings(){
 
@@ -34,7 +13,7 @@ function loadJobListings(){
     const count=Jobs.length;
 
 
-    for (let i=0;i<1;i++){
+    for (let i=0;i<count;i++){
 
         //Create job Item Main Container
         let grid_Item =document.createElement('div');
@@ -77,14 +56,14 @@ function loadJobListings(){
         let jobStatus=document.createElement('div');
         jobStatus.classList.add('jobStatus');
         
-        let sTime=document.createElement('span');
-        sTime.innerHTML=Jobs[i].postedAt;
+        let sTime=document.createElement('div');
+        sTime.innerHTML=Jobs[i].postedAt.trim();
         sTime.classList.add('font_16_2','font_40','font-color-gray','sTime');
 
         let sPoint=document.createElement('div');
         sPoint.classList.add('sPoint');
 
-        let sType=document.createElement('span');
+        let sType=document.createElement('div');
         sType.classList.add('font_16_2','font_40','font-color-gray','sType');
         sType.innerHTML=Jobs[i].contract;
 
@@ -170,15 +149,4 @@ function getLogoBackColor(cName){
             break;                  
     }
 }
-
-// function getLogoSize(cName){
-//     switch (cName) {
-//         case 'scoot':
-//             return 'scoot';
-//             break;
-//         // case 
-            
-//     }
-
-// }
 
