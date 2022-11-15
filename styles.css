@@ -275,21 +275,30 @@ body{
     margin:80px 165px;
 }
 
+.mid_Grid{
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    grid-template-rows: 253px 253px 253px auto;
+    column-gap: 30px;
+    row-gap: 40px;
+}
+
 /* Job Item Container */
 .jobItem{
     height: 253px;
     width: 350px;
     position: relative;
-    border:1px solid red;
+    /* border:1px solid transparent; */
 }
 
 .jobSubItem{
     height: 226;
     width: 348px;
-    position:relative;
-    margin-top: 25px;
+    position:absolute;
+    margin-top: 22px;
     background-color:#FFFF;
-    border:1px solid blueviolet;
+    border:1px solid #FFFF;
+    border-radius: 6px;
     font-size: 0px;
 }
 
@@ -298,7 +307,7 @@ body{
 .jobBag{
     height: 147px;
     width: 263px;
-    border:1px solid greenyellow;
+    /* border:1px solid greenyellow; */
     position: relative;
     margin-top: 49px;
     margin-bottom: 28px;
@@ -309,7 +318,7 @@ body{
 .jobStatus{
     width: 150px;
     height: 19px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 
     display: flex;
     align-items: center;
@@ -343,6 +352,7 @@ body{
     height: 50px;
     top:0px;
     left: 32px;
+    border-radius: 15px;
     position:absolute;
     z-index: 3; 
 }
@@ -356,13 +366,27 @@ body{
     line-height: 25px;
     cursor: pointer;
     margin-top:15px;
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
 }
 
+.jobCompany{
+    width: 50px;
+    height: 16px;
+    margin-top: 17px;
+    /* border: 1px solid cyan; */
+}
+
+.joblocation{
+    width: 286px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top:44px;
+    color: #5964E0;
+}
 /* Job Advert Company Logo List Styling */
 .scoot{
     background-color: #e99210;
-    border-radius: 15px;
 }
 
 .scoot_Size{
@@ -371,3 +395,75 @@ body{
     margin:19px auto; 
 }
 
+.blogr{
+    background-color: #E54D25;
+}
+
+.blogr_Size{
+    width: 21px;
+    height: 17px;
+    margin:17px auto;
+}
+
+.vector{
+    background-color: #34353F;
+}
+
+.vector_Size{
+    width: 38px;
+    height: 3px;
+    margin:23px auto;
+}
+
+.officelite{
+    background-color: #2F4FC7;
+}
+
+.officelite_Size{
+    width: 30px;
+    height: 20px;
+    margin:15px auto;
+}
+
+.pod{
+    background-color:#132034;
+}
+
+.pod_Size{
+    width: 24px;
+    height: 24px;
+    margin:13px auto;
+}
+
+
+.creative{
+    background-color:#4E1853;
+}
+
+.creative_Size{
+    width: 25.61px;
+    height: 26px;
+    margin:12px 9px 12px 13px;
+}
+
+
+.pomodoro{
+    background-color:#4722C6;
+}
+
+.pomodoro_Size{
+    width: 34px;
+    height: 7px;
+    margin:22px auto;
+}
+
+
+.maker{
+    background-color:#4722C6;
+}
+
+.maker_Size{
+    width: 34px;
+    height: 7px;
+    margin:22px auto;
+}
