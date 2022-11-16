@@ -19,7 +19,7 @@ function loadJobListings(){
         let grid_Item =document.createElement('div');
         grid_Item.setAttribute('id','grid'+Jobs[i].id);
         grid_Item.classList.add('jobItem');
-
+   
         //append the each Item to main Grid Container
         main.appendChild(grid_Item);
 
@@ -91,7 +91,6 @@ function loadJobListings(){
         jobLocation.classList.add('joblocation','bold_font_70')
         jobLocation.innerHTML=Jobs[i].location;
         jobBag.appendChild(jobLocation);
-
     }
 
 }
@@ -152,12 +151,21 @@ function getLogoBackColor(cName){
 
 
 function jobSearchFilter (){
-    let mySearch=Jobs.filter(stritem=>{
-        stritem.contract=='Full Time';
-    });
+    // let mySearch=Jobs.filter(stritem=>{
+    //     stritem.id===1;
+    // });
+    let arrStr=[];
+    for (let i=0;i<Jobs.length;i++){
+        if(Jobs[i].contract==='Full Time' && Jobs[i].company==='Scoot'){
+            arrStr.push(Jobs[i]);
+        }
+    }
 
-    console.log(mySearch);
+    console.log(arrStr);
 }
 
-
 jobSearchFilter();
+
+
+
+

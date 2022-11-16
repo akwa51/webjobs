@@ -4,6 +4,7 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
+    font-style: normal;
     font-family:'Kumbh Sans', sans-serif;
 }
 
@@ -41,17 +42,14 @@ body{
 
 /* font family */
 .bold_font_90{
-    font-style: normal;
     font-weight: 900;
 }
 
 .bold_font_70{
-    font-style: normal;
     font-weight: 700;
 }
 
 .font_40{
-    font-style: normal;
     font-weight: 400;
 }
 
@@ -140,6 +138,7 @@ body{
 
 #mode_button:checked{
     background-color: #ffffff;
+    mix-blend-mode:normal;
 }
 
 #mode_button:checked:before {
@@ -185,6 +184,7 @@ body{
     width: 463px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 /* head location bar */
@@ -204,6 +204,7 @@ body{
     display: flex;
     align-items: center;
     /* border: 1px solid black; */
+    cursor: pointer;
 }
 
 #location_text{
@@ -237,6 +238,7 @@ body{
     width: 110px;
     height: 16px;
     margin-left: 16px;
+    cursor: pointer;
 }
 
 #btnSearch{
@@ -248,6 +250,7 @@ body{
     border-radius: 8px;
     border: #5964E0;
     margin-left: 26px;
+    cursor: pointer;
     
 }
 
@@ -509,4 +512,27 @@ body{
     width: 24px;
     height: 24px;
     margin:13px auto;
+}
+
+.more_jobs{
+    position: absolute;
+    width:141px;
+    height: 48px;
+    background-color: #5964E0;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: #5964E0;
+    cursor: pointer;
+}
+
+#newjob{
+    width: max-content;
+    height: auto;
+    margin:56px auto;
+    border:1px #5964E0;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    place-content: center center;
+    padding-bottom: 104px;
 }
