@@ -31,32 +31,72 @@ $(document).ready(function(){
 
     $('#btnSearch').on('click',()=>{
         //verify on items selected if okay to for search
+        let sSearch=$('#search_text').val().trim().toLowerCase();
+        let sLocation=$('#location_text').val().trim().toLowerCase();
+        let sContract=$('#full_part').prop('checked')
+
+        $('.mid_Grid').empty();
+
+        if (sSearch!=='' || sLocation!=='' || sContract==true){
+        // if (sContract){    
+            $('#btn_jobs').hide();
+            let newArr=jobSearch(sSearch,sLocation,sContract);
+
+            if (newArr){
+                loadGridItems(newArr);
+            }else{
+                //return empty string
+            }
+
+        }else{
+            loadGridItems();
+            $('.unload').hide();
+            $('#btn_jobs').show()
+        }
     });
-
-
-
-
-    
+  
 });
 
 
 
-function jobSearch (searchStr='',strLocation='',strContract=''){
+function jobSearch (searchStr='',strLocation='',strContract=false){
 
     let arrStr=[];
-    searchStr=searchStr.toLowerCase().trim();
-    strLocation=strLocation.toLowerCase().trim();
-    strContract=strContract.toLowerCase().trim();
-
-
-    if (searchStr==='' && strLocation==='' && strContract===''){
-
-    }
+   
     for (let i=0;i<Jobb.length;i++){
-        if(Jobb[i].contract==='Full Time' && Jobb[i].company==='Scoot'){
-            arrStr.push(Jobs[i]);
+
+        if (searchStr!=='' && strLocation!=='' && strContract===true){
+            if(Jobb[i].position.toLowerCase().includes(searchStr) || Jobb[i].company.toLowerCase()===searchStr && Jobb[i].location.toLowerCase()===strLocation && Jobb[i].contract==='Full Time'){
+                    arrStr.push(Jobb[i]);
+            }
+        }else if(searchStr!=='' && strLocation!=='' && strContract===false){
+            if(Jobb[i].position.toLowerCase().includes(searchStr) || Jobb[i].company.toLowerCase()===searchStr && Jobb[i].location.toLowerCase()===strLocation){
+                arrStr.push(Jobb[i]);
+            }
+        }else if(searchStr!=='' && strLocation==='' && strContract===false){
+            if(Jobb[i].position.toLowerCase().includes(searchStr) || Jobb[i].company.toLowerCase()===searchStr){
+                arrStr.push(Jobb[i]);
+            }
+        }else if(searchStr==='' && strLocation!=='' && strContract===false){
+            if(Jobb[i].location.toLowerCase()===strLocation){
+                arrStr.push(Jobb[i]);
+            }
+        }else if(searchStr==='' && strLocation==='' && strContract===true){
+            if(Jobb[i].contract==='Full Time'){
+                arrStr.push(Jobb[i]);
+            }
+        }else if(searchStr!=='' && strLocation==='' && strContract===true){
+            if(Jobb[i].position.toLowerCase().includes(searchStr) || Jobb[i].company.toLowerCase()===searchStr && Jobb[i].contract==='Full Time'){
+                arrStr.push(Jobb[i]);
+             }
+        }else if(searchStr==='' && strLocation!=='' && strContract===true){
+            if(Jobb[i].location.toLowerCase()===strLocation && Jobb[i].contract==='Full Time'){
+                arrStr.push(Jobb[i]);
+            }
         }
     }
 
     console.log(arrStr);
+
+    return arrStr;
 }
