@@ -37,15 +37,19 @@ $(document).ready(function(){
 
         $('.mid_Grid').empty();
 
-        if (sSearch!=='' || sLocation!=='' || sContract==true){
-        // if (sContract){    
+        if (sSearch!=='' || sLocation!=='' || sContract==true){   
             $('#btn_jobs').hide();
             let newArr=jobSearch(sSearch,sLocation,sContract);
 
             if (newArr){
                 loadGridItems(newArr);
             }else{
-                //return empty string
+                //return empty string and add a popup Window
+                $('.mid_Grid').hide();
+                let myDiv=$('<div></div>');
+                myDiv.html('No Records Exist. Kindly Refine Search Criteria and Try Again!');
+                myDiv.addClass('erMessage font-color-2 font_size_16 bold_font_70');
+                $('#mid_Container').append(myDiv);
             }
 
         }else{
@@ -96,7 +100,7 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
         }
     }
 
-    console.log(arrStr);
+    //console.log(arrStr);
 
     return arrStr;
 }
