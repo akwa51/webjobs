@@ -261,5 +261,11 @@ function jobSearchFilter (searchStr='',strLocation='',strContract=''){
 // jobSearchFilter();
 
 
+function LoadBasics(){
+    document.getElementById('eMsg').classList.add('eHide');
+    // document.getElementById('e_detail').classList.add('');
+}
 
+
+// LoadBasics()
 

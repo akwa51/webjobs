@@ -7,6 +7,7 @@ import {loadJobListings as loadGridItems} from './job.js';
 $(document).ready(function(){
     // Hide Grid Items Not meant to be loaded 
     $('.unload').hide();
+    // $('.erMessage').hide();
 
     $('#search_filter').on('click',()=>{
         $('#search_text').focus();
@@ -39,6 +40,10 @@ $(document).ready(function(){
 
         $('#btn_jobs').hide();
 
+        // document.getElementById('eMsg').classList.remove('eShow');
+        // document.getElementById('eMsg').classList.add('eHide');
+        
+
         if (sSearch!=='' || sLocation!=='' || sContract==true){   
            
             let newArr=jobSearch(sSearch,sLocation,sContract);
@@ -47,9 +52,9 @@ $(document).ready(function(){
                 loadGridItems(newArr);
 
             }else{
-            
-                alert('No Record Found. Kindly Refine Search Criteria2!');      
-                console.log('Kindly Refine Search Criteria!') ;     
+      
+                // document.getElementById('eMsg').classList.remove('eHide');
+                // document.getElementById('eMsg').classList.add('eShow');
             }
 
         }else{
@@ -60,6 +65,7 @@ $(document).ready(function(){
     });
 
     $('.spec_show').hide();
+    $('.specd').hide();
 
     $('.jobSpecialty').on('click',()=>{
         $('.mid_Grid').hide();

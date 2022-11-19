@@ -541,20 +541,29 @@ body{
     padding-bottom: 104px;
 }
 
-.erMessage{
+
+.eHide{
+   display: none;
+} 
+
+.eshow{
+    display: block;
+}
+
+.errShow{
+    height: 150px;
+    width: 730px;
     background:#FFFFFF;
     color: #5964E0;
+    font-weight: 700;
     border-radius: 10px;
-    /* border:1px dotted #19202D; */
     font-size:20px;
-    height: 150px;
-    width: 720px;
+    padding:50px;
+    overflow:visible;
     top:250px;
     left:350px;
-    padding:50px;
     text-align: center;
     position: absolute;
-
     z-index: 3;
 }
 
