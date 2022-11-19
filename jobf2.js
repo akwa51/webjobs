@@ -37,19 +37,19 @@ $(document).ready(function(){
 
         $('.mid_Grid').empty();
 
+        $('#btn_jobs').hide();
+
         if (sSearch!=='' || sLocation!=='' || sContract==true){   
-            $('#btn_jobs').hide();
+           
             let newArr=jobSearch(sSearch,sLocation,sContract);
 
             if (newArr){
                 loadGridItems(newArr);
+
             }else{
-                //return empty string and add a popup Window
-                $('.mid_Grid').hide();
-                let myDiv=$('<div></div>');
-                myDiv.html('No Records Exist. Kindly Refine Search Criteria and Try Again!');
-                myDiv.addClass('erMessage font-color-2 font_size_16 bold_font_70');
-                $('#mid_Container').append(myDiv);
+            
+                alert('No Record Found. Kindly Refine Search Criteria2!');      
+                console.log('Kindly Refine Search Criteria!') ;     
             }
 
         }else{
@@ -57,6 +57,17 @@ $(document).ready(function(){
             $('.unload').hide();
             $('#btn_jobs').show()
         }
+    });
+
+    $('.spec_show').hide();
+
+    $('.jobSpecialty').on('click',()=>{
+        $('.mid_Grid').hide();
+        $('#newjob').hide();
+        $('#search_container').hide();
+
+        $('.spec_show').show();
+
     });
   
 });
@@ -100,7 +111,7 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
         }
     }
 
-    console.log(arrStr);
+    // console.log(arrStr);
 
     return arrStr;
 }

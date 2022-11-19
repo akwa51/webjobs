@@ -255,10 +255,10 @@ function jobSearchFilter (searchStr='',strLocation='',strContract=''){
         }
     }
 
-    console.log(arrStr);
+    // console.log(arrStr);
 }
 
-jobSearchFilter();
+// jobSearchFilter();
 
 
 
