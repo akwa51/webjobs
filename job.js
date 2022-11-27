@@ -93,7 +93,7 @@ export const loadJobListings=((Jobls=Jobs)=>{
         jobLocation.innerHTML=Jobls[i].location;
         jobBag.appendChild(jobLocation);
 
-
+        //Hide Loaded Items beyond 12
         if (i>=12){
             grid_Item.classList.add('unload');
         }
@@ -246,17 +246,17 @@ function getLogoBackColor(cName){
 }
 
 
-function jobSearchFilter (searchStr='',strLocation='',strContract=''){
+// function jobSearchFilter (searchStr='',strLocation='',strContract=''){
 
-    let arrStr=[];
-    for (let i=0;i<Jobs.length;i++){
-        if(Jobs[i].contract==='Full Time' && Jobs[i].company==='Scoot'){
-            arrStr.push(Jobs[i]);
-        }
-    }
+//     let arrStr=[];
+//     for (let i=0;i<Jobs.length;i++){
+//         if(Jobs[i].contract==='Full Time' && Jobs[i].company==='Scoot'){
+//             arrStr.push(Jobs[i]);
+//         }
+//     }
 
-    // console.log(arrStr);
-}
+//     // console.log(arrStr);
+// }
 
 // jobSearchFilter();
 

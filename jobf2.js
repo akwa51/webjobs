@@ -19,6 +19,7 @@ $(document).ready(function(){
 
     $('#btn_jobs').addClass('more_jobs bold_font_70 font_16_2');
 
+    //when Load More Button is Clicked
     $('#btn_jobs').on('click',()=>{
          $('.unload').toggle();
 
@@ -53,33 +54,47 @@ $(document).ready(function(){
 
             }else{
       
+                //display message that No Records Exist
+
                 // document.getElementById('eMsg').classList.remove('eHide');
                 // document.getElementById('eMsg').classList.add('eShow');
             }
 
         }else{
+
+            //Load Original Grid Items
             loadGridItems();
             $('.unload').hide();
             $('#btn_jobs').show()
         }
     });
 
+    /// Hide Selected Job Detail and Footer Form
     $('.spec_show').hide();
     $('.specd').hide();
 
-    $('.jobSpecialty').on('click',()=>{
+    //When Job Speciality is Selected 
+    $('.jobSpecialty').on('click',(e)=>{
         $('.mid_Grid').hide();
         $('#newjob').hide();
         $('#search_container').hide();
 
+    // let specId=$('.jobSpecialty').attr('id');
+        let specId=e.target.id;
+
+        console.log(specId);
+
         $('.spec_show').show();
+        
+     //Load Job Spec details
+        loadJobSpecs(specId);
 
     });
   
 });
 
 
-
+//Function to filter out Job Listings based on selected options
 function jobSearch (searchStr='',strLocation='',strContract=false){
 
     let arrStr=[];
@@ -116,8 +131,33 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
             }
         }
     }
-
     // console.log(arrStr);
-
     return arrStr;
+}
+
+
+// Load Job details form
+function loadJobSpecs(spId){
+    //fetch record based on given ID
+    let arrSp=getSpecRecord (spId)
+    if (arrSp.length>0){
+        console.log(arrSp);
+        //create container for company header
+        //create logo container
+        //create company site container
+        //add classes to align them
+    }
+
+}
+
+
+//get Job Specs by ID provided
+function getSpecRecord (el){
+    for (let i=0;i<Jobb.length;i++){
+        if(Jobb[i].id==el){
+            return Jobb[i];
+            break;
+        }
+    }
+    return [];
 }
