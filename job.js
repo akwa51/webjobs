@@ -101,6 +101,74 @@ export const loadJobListings=((Jobls=Jobs)=>{
 
 });
 
+
+
+
+
+loadJobListings();
+
+
+function getLogoBackColor(cName){
+    switch (cName) {
+        case 'scoot':
+            return 'scoot';
+            break;
+
+        case 'blogr':
+            return 'blogr';
+            break;
+
+        case 'vector':
+            return 'vector';
+            break; 
+
+        case 'office lite':
+            return 'officelite';
+            break;  
+
+        case 'pod':
+                return 'pod';
+                break;  
+
+        case 'creative':
+                return 'creative';
+                break;  
+            
+        case 'pomodoro':
+                return 'pomodoro';
+                break;   
+
+        case 'maker':
+                return 'maker';
+                break;  
+
+        case 'coffeeroasters':
+                return 'coffeeroasters';
+                break; 
+    
+        case 'mastercraft':
+            return 'mastercraft';
+            break; 
+
+        case 'crowdfund':
+            return 'crowdfund';
+            break; 
+
+        case 'typemaster':
+            return 'typemaster';
+            break;                  
+    }
+}
+
+
+
+function LoadBasics(){
+    document.getElementById('eMsg').classList.add('eHide');
+    // document.getElementById('e_detail').classList.add('');
+}
+
+// LoadBasics()
+
 // export function loadJobListings(){
 
 //     ///Get Main Grid container
@@ -189,83 +257,3 @@ export const loadJobListings=((Jobls=Jobs)=>{
 //         jobBag.appendChild(jobLocation);
 //     }
 // }
-
-loadJobListings();
-
-
-function getLogoBackColor(cName){
-    switch (cName) {
-        case 'scoot':
-            return 'scoot';
-            break;
-
-        case 'blogr':
-            return 'blogr';
-            break;
-
-        case 'vector':
-            return 'vector';
-            break; 
-
-        case 'office lite':
-            return 'officelite';
-            break;  
-
-        case 'pod':
-                return 'pod';
-                break;  
-
-        case 'creative':
-                return 'creative';
-                break;  
-            
-        case 'pomodoro':
-                return 'pomodoro';
-                break;   
-
-        case 'maker':
-                return 'maker';
-                break;  
-
-        case 'coffeeroasters':
-                return 'coffeeroasters';
-                break; 
-    
-        case 'mastercraft':
-            return 'mastercraft';
-            break; 
-
-        case 'crowdfund':
-            return 'crowdfund';
-            break; 
-
-        case 'typemaster':
-            return 'typemaster';
-            break;                  
-    }
-}
-
-
-// function jobSearchFilter (searchStr='',strLocation='',strContract=''){
-
-//     let arrStr=[];
-//     for (let i=0;i<Jobs.length;i++){
-//         if(Jobs[i].contract==='Full Time' && Jobs[i].company==='Scoot'){
-//             arrStr.push(Jobs[i]);
-//         }
-//     }
-
-//     // console.log(arrStr);
-// }
-
-// jobSearchFilter();
-
-
-function LoadBasics(){
-    document.getElementById('eMsg').classList.add('eHide');
-    // document.getElementById('e_detail').classList.add('');
-}
-
-
-// LoadBasics()
-

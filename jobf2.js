@@ -81,11 +81,10 @@ $(document).ready(function(){
 
     // let specId=$('.jobSpecialty').attr('id');
         let specId=e.target.id;
-
-        console.log(specId);
+        // console.log(specId);
 
         $('.spec_show').show();
-        
+
      //Load Job Spec details
         loadJobSpecs(specId);
 
@@ -139,12 +138,68 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
 // Load Job details form
 function loadJobSpecs(spId){
     //fetch record based on given ID
-    let arrSp=getSpecRecord (spId)
-    if (arrSp.length>0){
-        console.log(arrSp);
+    let arrSp=getSpecRecord (spId);
+
+    // console.log(arrSp);
+
+    if (arrSp){
         //create container for company header
-        //create logo container
+        const jobDetail=document.querySelector('#e_detail');
+        let jobDHeadBag=document.createElement('div');
+        jobDHeadBag.classList.add('edheadbag', 'font_16_2','font-color-2');
+        jobDetail.appendChild(jobDHeadBag);
+
+        //create company logo background container
+        let cLogoBag=document.createElement('div');
+        cLogoBag.classList.add('cdblogo');
+        cLogoBag.style.backgroundColor=arrSp.logoBackground;
+        jobDHeadBag.appendChild(cLogoBag);
+        
+        //create small logo container with Img
+        let simgBag=document.createElement('div');
+        let myImg=document.createElement('img');
+        let myUrl=arrSp.logo.substr(0,1)+'/starter-code/'+arrSp.logo.substr(2);
+        let logoTag=arrSp.company.toLowerCase().replace(' ','');
+        myImg.src=myUrl;
+        myImg.classList.add(logoTag+'_dimg');
+        simgBag.appendChild(myImg);
+        cLogoBag.appendChild(simgBag);
+        simgBag.classList.add(logoTag+'_dsize');
+        
         //create company site container
+        let compdSiteBag=document.createElement('div');
+        compdSiteBag.classList.add('compheadbag');
+        jobDHeadBag.appendChild(compdSiteBag);
+
+        //create small header company website bag
+
+        let scompSiteBag=document.createElement('div');
+        let hcompName=document.createElement('div');
+        let hcompSite=document.createElement('div');
+
+        scompSiteBag.classList.add('scomphbag');
+
+        hcompName.classList.add('hcompnbag','bold_font_70','font_size_24','font-color-2');
+        hcompName.innerHTML=arrSp.company;
+
+        hcompSite.classList.add('hcompdsite','font_40','font_size_16','font-color-gray');
+        hcompSite.innerHTML=logoTag+'.com';
+
+        scompSiteBag.appendChild(hcompName);
+        scompSiteBag.appendChild(hcompSite);
+        compdSiteBag.appendChild(scompSiteBag);
+
+        //Header Company Site Button
+        let hcompbtn=document.createElement('div');
+        let hcompinfo=document.createElement('div');
+        hcompinfo.classList.add('hcompi','font-color-violet','bold_font_70','font_size_16');
+        hcompinfo.innerHTML='Company Site';
+        hcompbtn.classList.add('hcompdbtn');
+        hcompbtn.appendChild(hcompinfo);        
+        compdSiteBag.appendChild(hcompbtn);
+
+
+
         //add classes to align them
     }
 

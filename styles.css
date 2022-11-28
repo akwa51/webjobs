@@ -29,6 +29,11 @@ body{
     font-size: 28px;
 }
 
+.font_size_24{
+    line-height: 30px;
+    font-size: 24px;
+}
+
 .font_size_16{
     line-height: 20px;
     font-size: 16px;
@@ -64,7 +69,7 @@ body{
 }
 
 .font-color-violet{
-    color:#9e7f66;
+    color:#5964E0;
 }
 
 .font-color-gray{
@@ -74,6 +79,8 @@ body{
 .font-color-2{
     color:#19202D;
 }
+
+
 
 /* Header Caption and Theme */
 
@@ -569,6 +576,8 @@ body{
     z-index: 3;
 }
 
+/* Stylings for Job Specification Details*/
+/* Style for Main Job Detail Container */
 .spec_show{
     width:730px;
     height: 1665px;
@@ -576,4 +585,224 @@ body{
     top:120px;
     padding-left: 0px;
     margin-left: 0px;
+    border: 1px solid yellow;
+}
+
+.edheadbag{
+    width: 728px;
+    /* height: 140px; */
+    height: fit-content;
+    display: flex;
+    border:1px solid blue;
+    background-color: #FFFFFF;
+}
+
+.cdblogo{
+    width: 140px;
+    height: 140px;
+    border:1px solid gold;
+}
+
+/* speciality company logo stylings */
+.scoot_dsize{
+    width: 100px;
+    height: 40px;
+    margin:55px 25px;
+    background-size:contain;   
+}
+
+.scoot_dimg{
+    width: 80%;
+    height: auto;
+}
+
+.blogr_dsize{
+    width: 100px;
+    height: 40px;
+    margin:40px;
+    background-size:contain;   
+}
+
+.blogr_dimg{
+    width: 80%;
+    height: auto;
+}
+
+
+.vector_dsize{
+    width: 120px;
+    height: 40px;
+    margin:55px 8px;
+    background-size:contain;   
+}
+
+.vector_dimg{
+    width: 100%;
+    height: auto;
+}
+
+.officelite_dsize{
+    width: 100px;
+    height: 40px;
+    margin:40px 30px;
+    background-size:contain;   
+}
+
+.officelite_dimg{
+    width: 80%;
+    height: auto;
+}
+
+.pod_dsize{
+    width: 100px;
+    height: 40px;
+    margin:28px;
+    background-size:contain;   
+}
+
+.pod_dimg{
+    width: 80%;
+    height: auto;
+}
+
+.creative_dsize{
+    width: 100px;
+    height: 40px;
+    margin:30px;
+    background-size:contain;   
+}
+
+.creative_dimg{
+    width: 80%;
+    height: auto;
+}
+
+
+.pomodoro_dsize{
+    width: 120px;
+    height: 40px;
+    margin:55px 8px;
+    background-size:contain;   
+}
+
+.pomodoro_dimg{
+    width: 100%;
+    height: auto;
+}
+
+.maker_dsize{
+    width: 100px;
+    height: 40px;
+    margin:28px;
+    background-size:contain;   
+}
+
+.maker_dimg{
+    width: 80%;
+    height: auto;
+}
+
+.coffeeroasters_dsize{
+    width: 100px;
+    height: 40px;
+    margin:28px;
+    background-size:contain;   
+}
+
+.coffeeroasters_dimg{
+    width: 80%;
+    height: auto;
+}
+
+.mastercraft_dsize{
+    width: 100px;
+    height: 40px;
+    margin:30px 25px;
+    background-size:contain;   
+}
+
+.mastercraft_dimg{
+    width: 80%;
+    height: auto;
+}
+
+.crowdfund_dsize{
+    width: 120px;
+    height: 40px;
+    margin:55px 8px;
+    background-size:contain;   
+}
+
+.crowdfund_dimg{
+    width: 100%;
+    height: auto;
+}
+
+.typemaster_dsize{
+    width: 100px;
+    height: 40px;
+    margin:28px;
+    background-size:contain;   
+}
+
+.typemaster_dimg{
+    width: 80%;
+    height: auto;
+}
+
+/*Styling for Job Spec Details-Company Section of Header*/
+.compheadbag{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.scomphbag{
+    width: max-content;
+    height: auto;
+    margin-left: 40px;
+    background-color: #FFFFFF;
+}
+
+.hcompnbag{
+    width:max-content;
+    height: 24px;
+}
+
+.hcompdsite{
+    width:76px;
+    height: 20px;
+    margin-top:10px;
+}
+
+.hcompdbtn{
+     width:147px;
+    height: 48px;
+    position: relative;
+    margin-right: 43px;
+
+}
+
+.hcompdbtn::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #5964E0;
+    opacity: 0.1;
+    border-radius: 5px;
+    top: 0; 
+	left: 0;
+    content: '';
+    z-index: 1;
+}
+
+.hcompi{
+    width:120px;
+    height: 16px;
+    margin:2px 20px;
+    padding-top: 12px;
+    z-index: 2;
 }
