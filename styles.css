@@ -39,6 +39,10 @@ body{
     font-size: 16px;
 }
 
+.font_size_20{
+    line-height:25px;
+    font-size: 20px;
+}
 .normal_font{
    font-size: 16px;
    line-height: 26px;
@@ -580,11 +584,14 @@ body{
 /* Style for Main Job Detail Container */
 .spec_show{
     width:730px;
-    height: 1665px;
+    height: max-content;
     position:absolute;
     top:120px;
+    left:355px;
     padding-left: 0px;
     margin-left: 0px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
     border: 1px solid yellow;
 }
 
@@ -593,14 +600,17 @@ body{
     /* height: 140px; */
     height: fit-content;
     display: flex;
-    border:1px solid blue;
+
+    /* border:1px solid blue; */
     background-color: #FFFFFF;
+    border-radius: 6px;
 }
 
 .cdblogo{
     width: 140px;
     height: 140px;
-    border:1px solid gold;
+    /* border:1px solid gold; */
+    border-bottom-left-radius: 6px;
 }
 
 /* speciality company logo stylings */
@@ -758,11 +768,12 @@ body{
     justify-content:space-between;
     align-items: center;
     background-color: #FFFFFF;
+    border-radius: 6px;
 }
 
 .scomphbag{
     width: max-content;
-    height: auto;
+    height: max-content;
     margin-left: 40px;
     background-color: #FFFFFF;
 }
@@ -805,4 +816,125 @@ body{
     margin:2px 20px;
     padding-top: 12px;
     z-index: 2;
+}
+
+
+/* Styling for Job speciality detail -main section */
+.mainjobcdetail{
+    width: 100%;
+    height: max-content;
+    margin-top: 32px;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+
+.jobadvcontainer{
+   width: 639px;
+   height: 87px; 
+   display: flex;
+   justify-content:space-between;
+   place-items: center center;
+   margin: 48px auto 40px auto;
+}
+
+.spjobadbag{
+    width: 468px;
+    height:max-content;
+}
+
+.spjobSpecialty{
+    width:max-content;
+    height: 30px;
+    font-size: 28px;
+    line-height: 35px;
+    margin-top:5px;
+    margin-bottom: 10px; 
+}
+
+.spjoblocation{
+    width: 286px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top:8px;
+    color: #5964E0;
+}
+
+.spbtnapply{
+    width: 141px;
+    height: 48px;
+    background-color: #5964E0;
+    border:#5964E0;
+    border-radius: 5px;
+}
+
+.spdjbesBag{
+    width:max-content;
+    height:max-content;
+    margin:40px auto;
+}
+
+.spjbescribe{
+    width:639px;
+    height:auto;
+    text-align:justify;
+}
+
+.spReqLabel{
+    width: max-content;
+    height: fit-content;
+    margin-left:48px;
+    margin-top:40px;
+}
+
+.spjreqdiv{
+    width:max-content;
+    height:max-content;
+    margin:28px auto 24px auto;
+}
+
+.spjbReqContents{
+    width:639px;
+    height:max-content;
+    text-align: justify;
+}
+
+.spreqlstBag{
+    width:639px;
+    height:max-content;
+    text-align: left;
+    margin:0px auto;
+}
+
+.splistBag{
+    width: 639px;
+    height: auto;
+    display: flex;
+    /* justify-content: space-between; */
+    position:relative;
+
+}
+
+.splistSachet{
+    width: 4px;
+    height:4px;
+    background: #5964E0;
+    border-radius: 50%;
+    position:absolute;
+    top:12px;
+}
+
+.spreqMItem{
+    width: 603px;
+    height: auto;
+    margin-left:36px;
+}
+
+.sptaskMLabel{
+    width: max-content;
+    height: fit-content;
+    margin-left:48px;
+    margin-top:48px;
 }

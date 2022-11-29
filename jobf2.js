@@ -140,9 +140,9 @@ function loadJobSpecs(spId){
     //fetch record based on given ID
     let arrSp=getSpecRecord (spId);
 
-    // console.log(arrSp);
-
     if (arrSp){
+
+        //create header container for job advert 
         //create container for company header
         const jobDetail=document.querySelector('#e_detail');
         let jobDHeadBag=document.createElement('div');
@@ -172,13 +172,11 @@ function loadJobSpecs(spId){
         jobDHeadBag.appendChild(compdSiteBag);
 
         //create small header company website bag
-
         let scompSiteBag=document.createElement('div');
         let hcompName=document.createElement('div');
         let hcompSite=document.createElement('div');
 
         scompSiteBag.classList.add('scomphbag');
-
         hcompName.classList.add('hcompnbag','bold_font_70','font_size_24','font-color-2');
         hcompName.innerHTML=arrSp.company;
 
@@ -198,9 +196,133 @@ function loadJobSpecs(spId){
         hcompbtn.appendChild(hcompinfo);        
         compdSiteBag.appendChild(hcompbtn);
 
+        //create Initial Job Advert as seen , and add click Button to Apply
+        //create and append main job specs container
+        let mainJobSpecBag=document.createElement('div');
+        mainJobSpecBag.classList.add('mainjobcdetail');
+        jobDetail.appendChild(mainJobSpecBag);
+
+        //create the Job Advert container, button and contents
+        let spJobAdvertContainer=document.createElement('div');
+        spJobAdvertContainer.classList.add('jobadvcontainer');
+        mainJobSpecBag.appendChild(spJobAdvertContainer);
+
+        let spJobAdvertBag=document.createElement('div');
+        spJobAdvertBag.classList.add('spjobadbag');
+        spJobAdvertContainer.appendChild(spJobAdvertBag);
+
+        //create Job Advert Status container here
+        let spdJobStatus=document.createElement('div');
+        spdJobStatus.classList.add('jobStatus');
+
+        let spTime=document.createElement('div');
+        spTime.innerHTML=arrSp.postedAt.trim();
+        spTime.classList.add('font_16_2','font_40','font-color-gray','sTime');
+
+        let spdPoint=document.createElement('div');
+        spdPoint.classList.add('sPoint');
+
+        let spPartFulltime=document.createElement('div');
+        spPartFulltime.innerHTML=arrSp.contract;
+        spPartFulltime.classList.add('font_16_2','font_40','font-color-gray','sType');
+
+        spdJobStatus.appendChild(spTime);
+        spdJobStatus.appendChild(spdPoint);
+        spdJobStatus.appendChild(spPartFulltime);
+        spJobAdvertBag.appendChild(spdJobStatus);
+        
+        ///Job Speciality being Advertised
+        let spjobSpeciality=document.createElement('div');
+        spjobSpeciality.classList.add('spjobSpecialty','font-color-2','bold_font_70');
+        spjobSpeciality.innerHTML=arrSp.position;
+        spJobAdvertBag.appendChild(spjobSpeciality);
 
 
-        //add classes to align them
+        let spJoblocation=document.createElement('div');
+        spJoblocation.classList.add('spjoblocation','bold_font_70')
+        spJoblocation.innerHTML=arrSp.location;
+        spJobAdvertBag.appendChild(spJoblocation);
+
+        let spjobApplybtn=document.createElement('button');
+        spjobApplybtn.classList.add('spbtnapply','font_size_16','font-color-white','bold_font_70');
+        spjobApplybtn.innerHTML='Apply Now'
+        spJobAdvertContainer.appendChild(spjobApplybtn);
+
+
+        // Load Initial Job Description 
+         let spdJobDesBag=document.createElement('div');
+         spdJobDesBag.classList.add('spdjbesBag');
+         mainJobSpecBag.appendChild(spdJobDesBag);
+
+         let spjobDescription=document.createElement('p');
+         spjobDescription.innerHTML=arrSp.description;
+         spjobDescription.classList.add('spjbescribe','font-color-gray','font_40','normal_font');
+         spdJobDesBag.appendChild(spjobDescription);
+
+         //Add Job Requirement Label
+         let spReqHeader=document.createElement('div');
+         spReqHeader.innerHTML='Requirements';
+         spReqHeader.classList.add('spReqLabel','font_size_20','font-color-2','bold_font_70');
+         mainJobSpecBag.appendChild(spReqHeader);
+
+        //Load Main Job Requirements
+        let spjobReqContainer=document.createElement('div');
+        let spjobRequirements=document.createElement('p');
+        spjobReqContainer.classList.add('spjreqdiv');
+
+        spjobReqContainer.appendChild(spjobRequirements);
+        mainJobSpecBag.appendChild(spjobReqContainer);
+
+        spjobRequirements.innerHTML=arrSp.requirements['content'].trim();
+        spjobRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
+
+        //Load Requirement List Items
+        let spreqListContainer=document.createElement('div');
+        spreqListContainer.classList.add('spreqlstBag');
+        mainJobSpecBag.appendChild(spreqListContainer);
+
+        let cList=arrSp.requirements.items.length;
+        if (cList>0){
+
+            //create a List Container Element
+            for (let j=0; j<cList;j++){
+                
+                //create parent list bag
+                let spdlistSachet=document.createElement('div');
+                spdlistSachet.classList.add('splistBag');
+
+                //create respective list items and append
+                let esPoint=document.createElement('div');
+                esPoint.classList.add('splistSachet');
+                spdlistSachet.appendChild(esPoint);
+
+                let spMreqList=document.createElement('div');
+                spMreqList.classList.add('spreqMItem','font-color-gray','font_40','normal_font');
+                spMreqList.innerHTML=arrSp.requirements.items[j];
+                spdlistSachet.appendChild(spMreqList);
+                spreqListContainer.appendChild(spdlistSachet);
+
+            }
+        }
+
+        //Load What You'll Do_ Label First
+        let spTaskLabel=document.createElement('div');
+        spTaskLabel.innerHTML='What You Will Do';
+        spTaskLabel.classList.add('sptaskMLabel','font_size_20','font-color-2','bold_font_70');
+        mainJobSpecBag.appendChild(spTaskLabel);
+
+        //Load Seek Job Description
+        let spjobSeekerContainer=document.createElement('div');
+        let spjobSeekerRequirements=document.createElement('p');
+        spjobSeekerContainer.classList.add('spjreqdiv');
+
+        spjobSeekerContainer.appendChild(spjobSeekerRequirements);
+        mainJobSpecBag.appendChild(spjobSeekerContainer);
+
+        spjobSeekerRequirements.innerHTML=arrSp.role.content
+        spjobSeekerRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
+
+
     }
 
 }
