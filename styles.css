@@ -12,7 +12,7 @@ body{
     width: 100vw;
     height:100vh;
     background-color: #f4f6f8;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     padding:0px;
     margin: 0 auto;
 }
@@ -136,6 +136,7 @@ body{
     mix-blend-mode: normal;
     background-color: #ffffff;
     margin:auto 8px;
+    cursor: pointer;
     border-radius: 12px;
     border: 1px solid #5964E0;
 }
@@ -236,12 +237,18 @@ body{
     height: 24px;
     margin-left: 32px;
     border-radius: 3px;
+    border-color: #FFFFFF;
     background: #19202d;
     /* accent-color:#0d169c; */
     /* accent-color:#19202d;
       mix-blend-mode: normal;*/
-    opacity: 0.5;
+    opacity: 0.1;
     cursor: pointer;
+   }
+
+   #full_part:hover{
+    background: #5964E0;
+    opacity:0.25;
    }
 
    #full_part:checked::before{
@@ -352,6 +359,7 @@ body{
     margin-left: 12px;
     background-color: #6E8098;
     place-self: end;
+    margin-bottom: 5px;
 }
 
 .sTime{
@@ -937,4 +945,55 @@ body{
     height: fit-content;
     margin-left:48px;
     margin-top:48px;
+}
+
+
+.spseeklstBag{
+    width:639px;
+    height:max-content;
+    text-align: left;
+    margin:24px auto 48px auto;
+}
+
+.jseekItem{
+    width: 8px;
+    height:26px;
+    background: #FFFFFF;
+    position:absolute;
+    top:1px;
+}
+
+
+/* Footer Styling */
+.specd{
+    width:100vw;
+    height: 96px;
+    margin-top: 80px;
+    position:absolute;
+    /* top:1229px; */
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+#inf_container{
+    width: 730px;
+    height: 51px;
+    margin: 23px 355px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#spec_title{
+    width: max-content;
+    height: auto;
+}
+
+#iapply{
+    width: max-content;
+    height: auto;
+}
+
+.sdigital{
+    margin-top: 12px;
 }
