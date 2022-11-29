@@ -99,10 +99,8 @@ export const loadJobListings=((Jobls=Jobs)=>{
         }
     }
 
+
 });
-
-
-
 
 
 loadJobListings();

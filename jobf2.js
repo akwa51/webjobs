@@ -75,19 +75,8 @@ $(document).ready(function(){
 
     //When Job Speciality is Selected 
     $('.jobSpecialty').on('click',(e)=>{
-        $('.mid_Grid').hide();
-        $('#newjob').hide();
-        $('#search_container').hide();
-
-    // let specId=$('.jobSpecialty').attr('id');
-        let specId=e.target.id;
-        // console.log(specId);
-
-        $('.spec_show').show();
-
      //Load Job Spec details
-        loadJobSpecs(specId);
-
+        loadJobSpecs(e.target.id);
     });
   
 });
@@ -141,6 +130,16 @@ function loadJobSpecs(spId){
     let arrSp=getSpecRecord (spId);
 
     if (arrSp){
+
+        $('.mid_Grid').hide();
+        $('#newjob').hide();
+        $('#search_container').hide();
+
+    // let specId=$('.jobSpecialty').attr('id');
+        // let specId=e.target.id;
+        $('.spec_show').empty();
+        $('.spec_show').show();
+
 
         //create header container for job advert 
         //create container for company header
@@ -323,6 +322,8 @@ function loadJobSpecs(spId){
         spjobSeekerRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
 
 
+    }else{
+        console.log('I got no records');
     }
 
 }
@@ -333,8 +334,22 @@ function getSpecRecord (el){
     for (let i=0;i<Jobb.length;i++){
         if(Jobb[i].id==el){
             return Jobb[i];
-            break;
         }
     }
     return [];
 }
+
+
+//Add Event Listener to Grid items
+// function gridClickItems(){
+//     const gridSpecialty=$('.jobSpecialty');
+   
+//     for (const sp of gridSpecialty){
+//             sp.addEventListener('click',function (e) {
+//                 loadJobSpecs(e.target);
+//     });
+//     }
+
+// }
+
+// gridClickItems();
