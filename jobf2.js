@@ -2,6 +2,7 @@
 //Import JSON file here for DOM Manipulation
 import Jobb from './starter-code/data.json' assert {type:'json'};
 import {loadJobListings as loadGridItems} from './job.js';
+let darkMode=false;
 
 
 $(document).ready(function(){
@@ -125,7 +126,7 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
 
 
 // Load Job details form
-function loadJobSpecs(spId){
+export function loadJobSpecs(spId){
     //fetch record based on given ID
     let arrSp=getSpecRecord (spId);
 
@@ -136,7 +137,6 @@ function loadJobSpecs(spId){
         $('#search_container').hide();
 
     // let specId=$('.jobSpecialty').attr('id');
-        // let specId=e.target.id;
         $('.spec_show').empty();
         $('.spec_show').show();
 
@@ -276,12 +276,13 @@ function loadJobSpecs(spId){
         spjobRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
 
         //Load Requirement List Items
-        let spreqListContainer=document.createElement('div');
-        spreqListContainer.classList.add('spreqlstBag');
-        mainJobSpecBag.appendChild(spreqListContainer);
-
         let cList=arrSp.requirements.items.length;
         if (cList>0){
+
+            //Load Requirement List Items
+            let spreqListContainer=document.createElement('div');
+            spreqListContainer.classList.add('spreqlstBag');
+            mainJobSpecBag.appendChild(spreqListContainer);
 
             //create a List Container Element
             for (let j=0; j<cList;j++){
@@ -322,8 +323,50 @@ function loadJobSpecs(spId){
         spjobSeekerRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
 
 
-    }else{
-        console.log('I got no records');
+        //Load Seek Job Items
+        let rList=arrSp.role.items.length;
+        if (rList>0){
+
+            //Load Requirement List Items
+            let spjobSeekContainer=document.createElement('div');
+            spjobSeekContainer.classList.add('spseeklstBag');
+            mainJobSpecBag.appendChild(spjobSeekContainer);
+
+
+             //create a List Container Element
+             for (let j=0; j<rList;j++){
+                
+                //create parent list bag
+                let spjslistSachet=document.createElement('div');
+                spjslistSachet.classList.add('splistBag');
+
+                //create respective list items and append
+                let olsPoint=document.createElement('div');
+                olsPoint.classList.add('jseekItem','font-color-violet','bold_font_70','normal_font');
+                olsPoint.innerHTML=j+1;
+                spjslistSachet.appendChild(olsPoint);
+
+                let spjobMSeekList=document.createElement('div');
+                spjobMSeekList.classList.add('spreqMItem','font-color-gray','font_40','normal_font');
+                spjobMSeekList.innerHTML=arrSp.role.items[j];
+                spjslistSachet.appendChild(spjobMSeekList);
+                spjobSeekContainer.appendChild(spjslistSachet);
+             }  
+        }
+
+        //Make the footer Visible
+        $('.fspRole').addClass('font-color-2 bold_font_70 font_size_20');
+        $('.fspRole').html(arrSp.position);
+      
+
+        // Set the position of footer & Display
+        let myPl=$('.spec_show').height()+100;
+        
+        $('.specd').css('top', myPl);
+        $('.specd').show();
+
+    // }else{
+    //     console.log('I got no records');
     }
 
 }
@@ -338,18 +381,3 @@ function getSpecRecord (el){
     }
     return [];
 }
-
-
-//Add Event Listener to Grid items
-// function gridClickItems(){
-//     const gridSpecialty=$('.jobSpecialty');
-   
-//     for (const sp of gridSpecialty){
-//             sp.addEventListener('click',function (e) {
-//                 loadJobSpecs(e.target);
-//     });
-//     }
-
-// }
-
-// gridClickItems();
