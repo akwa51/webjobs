@@ -10,6 +10,19 @@ $(document).ready(function(){
     $('.unload').hide();
     // $('.erMessage').hide();
 
+    //DarkMode Switch settings
+    $('.switch1').on('click',()=>{
+        $('.switch1').toggleClass('sw1dxn');
+    });
+
+    $('.swbackgrd').hover(()=>{
+        $('.switch1').toggleClass('mode_state');
+    }).on('click',()=>{
+        $('.switch1').toggleClass('sw1dxn');
+    });
+
+
+
     $('#search_filter').on('click',()=>{
         $('#search_text').focus();
     });
