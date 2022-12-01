@@ -2,7 +2,7 @@
 //Import JSON file here for DOM Manipulation
 import Jobb from './starter-code/data.json' assert {type:'json'};
 import {loadJobListings as loadGridItems} from './job.js';
-let darkMode=false;
+// let darkMode=false;
 
 
 $(document).ready(function(){
@@ -33,15 +33,23 @@ $(document).ready(function(){
     //DarkMode Switch settings
     $('.switch1').on('click',()=>{
         $('.switch1').toggleClass('sw1dxn');
-        darkMode=darkMode?false:true;
+        togSwitch();
+        // console.log($('#mode_button').prop('checked'));
+        //create function to apply dark mode settings
     });
 
     $('.swbackgrd').hover(()=>{
         $('.switch1').toggleClass('mode_state');
     }).on('click',()=>{
         $('.switch1').toggleClass('sw1dxn');
-        darkMode=darkMode?false:true;
+        togSwitch();
     });
+
+    //Place eventListener on toggle checkbox to trigger mode settings
+
+
+
+
 
 
 
@@ -54,6 +62,7 @@ $(document).ready(function(){
     });
 
     $('#btn_jobs').addClass('more_jobs bold_font_70 font_16_2');
+
 
     //when Load More Button is Clicked
     $('#btn_jobs').on('click',()=>{
@@ -222,12 +231,17 @@ export function loadJobSpecs(spId){
         compdSiteBag.appendChild(scompSiteBag);
 
         //Header Company Site Button
-        let hcompbtn=document.createElement('div');
-        let hcompinfo=document.createElement('div');
-        hcompinfo.classList.add('hcompi','font-color-violet','bold_font_70','font_size_16');
-        hcompinfo.innerHTML='Company Site';
-        hcompbtn.classList.add('hcompdbtn');
-        hcompbtn.appendChild(hcompinfo);        
+        // let hcompbtn=document.createElement('div');
+        // let hcompinfo=document.createElement('div');
+        // hcompinfo.classList.add('hcompi','bold_font_70','font_size_16');
+        // hcompinfo.innerHTML='Company Site';
+        // hcompbtn.classList.add('hcompdbtn');
+        // hcompbtn.appendChild(hcompinfo);        
+        // compdSiteBag.appendChild(hcompbtn);
+
+        let hcompbtn=document.createElement('button');
+        hcompbtn.innerHTML='Company Site';
+        hcompbtn.classList.add('hcompdbtn','font-color-spcompany','bold_font_70','font_size_16');
         compdSiteBag.appendChild(hcompbtn);
 
         //create Initial Job Advert as seen , and add click Button to Apply
@@ -290,7 +304,7 @@ export function loadJobSpecs(spId){
 
          let spjobDescription=document.createElement('p');
          spjobDescription.innerHTML=arrSp.description;
-         spjobDescription.classList.add('spjbescribe','font-color-gray','font_40','normal_font');
+         spjobDescription.classList.add('spjbescribe','font-color-spmain','font_40','normal_font');
          spdJobDesBag.appendChild(spjobDescription);
 
          //Add Job Requirement Label
@@ -308,7 +322,7 @@ export function loadJobSpecs(spId){
         mainJobSpecBag.appendChild(spjobReqContainer);
 
         spjobRequirements.innerHTML=arrSp.requirements['content'].trim();
-        spjobRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
+        spjobRequirements.classList.add('spjbReqContents','font-color-spmain','font_40','normal_font');
 
         //Load Requirement List Items
         let cList=arrSp.requirements.items.length;
@@ -332,7 +346,7 @@ export function loadJobSpecs(spId){
                 spdlistSachet.appendChild(esPoint);
 
                 let spMreqList=document.createElement('div');
-                spMreqList.classList.add('spreqMItem','font-color-gray','font_40','normal_font');
+                spMreqList.classList.add('spreqMItem','font-color-spmain','font_40','normal_font');
                 spMreqList.innerHTML=arrSp.requirements.items[j];
                 spdlistSachet.appendChild(spMreqList);
                 spreqListContainer.appendChild(spdlistSachet);
@@ -355,7 +369,7 @@ export function loadJobSpecs(spId){
         mainJobSpecBag.appendChild(spjobSeekerContainer);
 
         spjobSeekerRequirements.innerHTML=arrSp.role.content
-        spjobSeekerRequirements.classList.add('spjbReqContents','font-color-gray','font_40','normal_font');
+        spjobSeekerRequirements.classList.add('spjbReqContents','font-color-spmain','font_40','normal_font');
 
 
         //Load Seek Job Items
@@ -382,7 +396,7 @@ export function loadJobSpecs(spId){
                 spjslistSachet.appendChild(olsPoint);
 
                 let spjobMSeekList=document.createElement('div');
-                spjobMSeekList.classList.add('spreqMItem','font-color-gray','font_40','normal_font');
+                spjobMSeekList.classList.add('spreqMItem','font-color-spmain','font_40','normal_font');
                 spjobMSeekList.innerHTML=arrSp.role.items[j];
                 spjslistSachet.appendChild(spjobMSeekList);
                 spjobSeekContainer.appendChild(spjslistSachet);
@@ -415,4 +429,15 @@ function getSpecRecord (el){
         }
     }
     return [];
+}
+
+
+//function to toggle switch
+function togSwitch(){
+    let chkState=$('#mode_button').prop('checked');
+    if (chkState){
+        $('#mode_button').prop('checked',false);
+    }else{
+        $('#mode_button').prop('checked',true);
+    }
 }

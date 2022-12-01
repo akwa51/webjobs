@@ -17,7 +17,7 @@
             <div id="theme_container">
                 <div id="day" class="img_sun"></div>
                 <div id="myMode">
-                    <!-- <input id="mode_button"type="checkbox"> -->
+                    <input id="mode_button"type="checkbox">
                     <span class="switch1"></span>
                     <span class="swbackgrd"></span>
                 </div>
@@ -34,7 +34,10 @@
                 <input id="location_text" class="normal_font font_40" type="text" value="" placeholder="Filter by location...">
             </div>
             <div id="fulltime_filter">
-                <input id="full_part" class="" type="checkbox" value="None"> 
+                <label class="fcontain">
+                    <input id="full_part" class="" type="checkbox" value="None"> 
+                    <span class="checkmark"></span>                   
+                </label>
                 <label for="full_part" id="lblfulltime" class="bold_font_70 font_size_16">Full Time Only</label>
                 <button id="btnSearch" class="bold_font_70 font_size_16">Search</button>
             </div> 
