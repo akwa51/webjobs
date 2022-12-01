@@ -30,28 +30,35 @@ body{
     --button-bg2: #939BF4;
     --text-head:#19202D;
     --text-main:#6E8098;
+    --check-hover:#5964E0;
+    --company-site-btn:#5964E0;
+    --check-idle:#19202D;
+    --job-sptext-main:#6E8098;
 }
 
 
 .light{
 
     --main-bg: #f4f6f8;
+    --caption-color:#FFFFFF;
+    --switch-btn-color:#5964E0;
     --text-bg: #FFFFFF;
     --button-bg: #5964E0;
     --button-bg2: #939BF4;
     --text-head:#19202D;
     --text-main:#6E8098;
-    /*--shadow: #a1c6ea;
-    --text-sec: #507dbc;*/
+    --check-hover:#5964E0;
+    --check-idle:#19202D;
+    --company-site-btn:#5964E0;
+    --job-sptext-main:#6E8098;
 }
 
 .dark{
-    padding:auto;
-    /* --main-bg: #f4f6f8; */
-    /* --text-bg: #bbd1ea;
-    --shadow: #a1c6ea;
-    --text-sec: #507dbc;
-    --text-main: #16263b; */
+    --main-bg: #19202D;
+    --text-bg:#19202D;
+    --text-head:#FFFFFF;
+    --company-site-btn:#FFFFFF;
+    --job-sptext-main:#9DAEC2;
 
 }
 
@@ -116,6 +123,14 @@ body{
     color: var(--text-main);
 }
 
+.font-color-spmain{
+    color:var(--job-sptext-main);
+}
+
+.font-color-spcompany{
+    color:var(--company-site-btn);
+}
+
 .font-color-2{
     color:var(--text-head);
 }
@@ -158,6 +173,7 @@ body{
     width: 112px;
 }
 
+/* Implement Switch Button for Dark-Light Mode */
 #myMode{
     position: relative;
     width: min-content;
@@ -187,14 +203,29 @@ body{
     height: 14px;
     border-radius: 50%;
     transition: 0.5s;
-    z-index: 3;
+    z-index: 1;
     background-color:var(--button-bg);
+}
+
+#mode_button:checked + .switch1{
+    /* background:#01f4fd; */
+    position: absolute;
+    transform: translateX(30px);
 }
 
 .sw1dxn{
     display: block;
     transform: translateX(30px);
 }
+
+
+#mode_button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    user-select: none;
+  }
 
 /* #mode_button{
     outline: none;
@@ -299,32 +330,79 @@ body{
     /* border: 1px solid black; */
 }
 
-/* fulltime filter */
-#full_part{
-    width: 24px;
-    height: 24px;
-    margin-left: 32px;
-    border-radius: 3px;
-    border-color: var(--text-bg);
-    background: var(--text-head);
-    opacity: 0.1;
+/* fulltime filter Implementation*/
+
+/* let's implement a custom checkbox 01 Dec 2022*/ 
+.fcontain{
+    display: block;
+    position:relative;
     cursor: pointer;
-   }
+    font-size: 22px;
+}
 
-   #full_part:hover{
-    background: var(--button-bg);
-    opacity:0.25;
-   }
+/* Hide the browser's default checkbox */
+.fcontain input {
+    position:absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
 
-   #full_part:checked::before{
-    accent-color:var(--text-head);
-    }
+/* Create a custom checkbox */
+.checkmark{
+    position:absolute;
+    top:-12px;
+    left:32px;
+    height: 28px;
+    width: 28px;
+    background-color: var(--check-idle);
+    border:2px solid var(--text-bg);
+    border-radius: 3px;
+    opacity: 0.1;
+}
 
+/* On mouse-over, add a custom blue background color */
+.fcontain:hover input ~ .checkmark{
+    background-color: var(--check-hover) ;
+    opacity: 0.25;
+}
+
+/* When the checkbox is checked, add a blue background */
+.fcontain input:checked ~ .checkmark {
+    background-color:var(--check-hover);
+    opacity: 1;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark::after{
+    content:"";
+    position:absolute;
+    display:none;
+}
+
+/* Show the checkmark when checked */
+.fcontain input:checked ~ .checkmark::after{
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.fcontain .checkmark::after {
+
+   left:8px;
+   top:3px;
+   width: 5px;
+   height: 14px;
+   border: solid white;
+   border-width: 0 2px 2px 0;
+   transform: rotate(35deg);
+}
+
+/* End of checkbox line of action */
 
 #lblfulltime{
     width: 110px;
     height: 16px;
-    margin-left: 16px;
+    margin-left: 72px;
     cursor: pointer;
 }
 
@@ -332,7 +410,7 @@ body{
     width: 123px;
     height: 48px;
     background-color: var(--button-bg);
-    color: var(--text-bg);
+    color: var(--caption-color);
     border-radius: 8px;
     border: var(--button-bg);
     margin-left: 26px;
@@ -610,7 +688,7 @@ body{
     width:141px;
     height: 48px;
     background-color:var(--button-bg);
-    color: var(--text-bg);
+    color: var(--caption-color);
     border-radius: 8px;
     border:var(--button-bg);
     cursor: pointer;
@@ -867,11 +945,42 @@ body{
      width:147px;
     height: 48px;
     position: relative;
+    border-radius: 5px;
+    border-color:transparent;
     margin-right: 43px;
+    /* background-color: var(--company-site-btn); */
+}
 
+.hcompdbtn:hover{
+    opacity: 0.35;
+    cursor: pointer;
+    z-index: 3;
+    background-color: var(--company-site-btn);
+}
+
+.hcompdbtn::after:hover{
+    /* opacity: 0.35; */
+    /* top:40px;
+    left:20px; */
+    z-index: 1;
+    background-color:transparent;
 }
 
 .hcompdbtn::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:var(--company-site-btn);
+    border-color:transparent;
+    opacity: 0.1;
+    border-radius: 5px;
+    top: 0; 
+	left: 0;
+    content: '';
+    z-index: 2;
+}
+
+/* .hcompdbtn::after{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -882,15 +991,16 @@ body{
 	left: 0;
     content: '';
     z-index: 1;
-}
+} */
 
-.hcompi{
+/* .hcompi{
     width:120px;
     height: 16px;
     margin:2px 20px;
     padding-top: 12px;
+    background-color: var(--company-site-btn);
     z-index: 2;
-}
+} */
 
 
 /* Styling for Job speciality detail -main section */
