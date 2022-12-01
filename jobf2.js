@@ -231,14 +231,6 @@ export function loadJobSpecs(spId){
         compdSiteBag.appendChild(scompSiteBag);
 
         //Header Company Site Button
-        // let hcompbtn=document.createElement('div');
-        // let hcompinfo=document.createElement('div');
-        // hcompinfo.classList.add('hcompi','bold_font_70','font_size_16');
-        // hcompinfo.innerHTML='Company Site';
-        // hcompbtn.classList.add('hcompdbtn');
-        // hcompbtn.appendChild(hcompinfo);        
-        // compdSiteBag.appendChild(hcompbtn);
-
         let hcompbtn=document.createElement('button');
         hcompbtn.innerHTML='Company Site';
         hcompbtn.classList.add('hcompdbtn','font-color-spcompany','bold_font_70','font_size_16');
