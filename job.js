@@ -81,8 +81,7 @@ export const loadJobListings=((Jobls=Jobs)=>{
         jobSpecialty.innerHTML=Jobls[i].position;
         jobBag.appendChild(jobSpecialty);
         jobSpecialty.addEventListener('click',(e)=>{loadJobSpecs(e.target.id)});
-
-
+    
         //Company Name
         let company=document.createElement('div');
         company.classList.add('jobCompany','font_size_16','font-color-gray','font_40');
