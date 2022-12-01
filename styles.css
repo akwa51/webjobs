@@ -31,9 +31,11 @@ body{
     --text-head:#19202D;
     --text-main:#6E8098;
     --check-hover:#5964E0;
-    --company-site-btn:#5964E0;
+    --company-site-forebtn:#5964E0;
+    --company-site-rearbtn:#5964E01A;
     --check-idle:#19202D;
     --job-sptext-main:#6E8098;
+    --company-site-hoverbtn:#5964e059;
 }
 
 
@@ -41,7 +43,7 @@ body{
 
     --main-bg: #f4f6f8;
     --caption-color:#FFFFFF;
-    --switch-btn-color:#5964E0;
+    --switch-btn-color:#5964e0;
     --text-bg: #FFFFFF;
     --button-bg: #5964E0;
     --button-bg2: #939BF4;
@@ -49,17 +51,21 @@ body{
     --text-main:#6E8098;
     --check-hover:#5964E0;
     --check-idle:#19202D;
-    --company-site-btn:#5964E0;
+    --company-site-forebtn:#5964E0;
+    --company-site-rearbtn:#5964E01A;
     --job-sptext-main:#6E8098;
+    --company-site-hoverbtn:#5964e059;
 }
 
 .dark{
-    --main-bg: #19202D;
+    --main-bg: #121721;
     --text-bg:#19202D;
     --text-head:#FFFFFF;
     --company-site-btn:#FFFFFF;
     --job-sptext-main:#9DAEC2;
-
+    --company-site-forebtn:#FFFFFF;
+    --company-site-rearbtn:#ffffff1A;
+    --company-site-hoverbtn:#FFFFFF40;
 }
 
 
@@ -112,7 +118,7 @@ body{
     color:var(--caption-color)
 }
 .font-color-white{
-    color: var(--text-bg);
+    color: var(--caption-color);
 }
 
 .font-color-violet{
@@ -128,7 +134,7 @@ body{
 }
 
 .font-color-spcompany{
-    color:var(--company-site-btn);
+    color:var(--company-site-forebtn);
 }
 
 .font-color-2{
@@ -253,7 +259,9 @@ body{
 } */
 
 .mode_state,#btnSearch:hover,
-#btn_jobs:hover,.switch1:hover{
+#btn_jobs:hover,.switch1:hover,
+.spbtnapply:hover
+{
     background:var(--button-bg2);
     cursor: pointer;
 }
@@ -948,60 +956,13 @@ body{
     border-radius: 5px;
     border-color:transparent;
     margin-right: 43px;
-    /* background-color: var(--company-site-btn); */
+    background-color: var(--company-site-rearbtn);
 }
 
 .hcompdbtn:hover{
-    opacity: 0.35;
     cursor: pointer;
-    z-index: 3;
-    background-color: var(--company-site-btn);
+    background-color: var(--company-site-hoverbtn);
 }
-
-.hcompdbtn::after:hover{
-    /* opacity: 0.35; */
-    /* top:40px;
-    left:20px; */
-    z-index: 1;
-    background-color:transparent;
-}
-
-.hcompdbtn::after{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color:var(--company-site-btn);
-    border-color:transparent;
-    opacity: 0.1;
-    border-radius: 5px;
-    top: 0; 
-	left: 0;
-    content: '';
-    z-index: 2;
-}
-
-/* .hcompdbtn::after{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color:var(--button-bg);
-    opacity: 0.1;
-    border-radius: 5px;
-    top: 0; 
-	left: 0;
-    content: '';
-    z-index: 1;
-} */
-
-/* .hcompi{
-    width:120px;
-    height: 16px;
-    margin:2px 20px;
-    padding-top: 12px;
-    background-color: var(--company-site-btn);
-    z-index: 2;
-} */
-
 
 /* Styling for Job speciality detail -main section */
 .mainjobcdetail{
