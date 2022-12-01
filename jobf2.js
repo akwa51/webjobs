@@ -10,15 +10,37 @@ $(document).ready(function(){
     $('.unload').hide();
     // $('.erMessage').hide();
 
+    //Add Event Listener for search Input field for Opacity
+    $('#search_text').keyup((e)=>{
+        if($('#search_text').val().trim()!==''){
+            e.target.style.opacity='1';
+        }else{
+            e.target.style.opacity='0.5';
+        }
+    });
+
+    //Add Event Listener for location Input field for Opacity
+    $('#location_text').keyup((e)=>{
+        if($('#location_text').val().trim()!==''){
+            e.target.style.opacity='1';
+        }else{
+            e.target.style.opacity='0.5';
+        }
+    });
+
+    
+
     //DarkMode Switch settings
     $('.switch1').on('click',()=>{
         $('.switch1').toggleClass('sw1dxn');
+        darkMode=darkMode?false:true;
     });
 
     $('.swbackgrd').hover(()=>{
         $('.switch1').toggleClass('mode_state');
     }).on('click',()=>{
         $('.switch1').toggleClass('sw1dxn');
+        darkMode=darkMode?false:true;
     });
 
 
