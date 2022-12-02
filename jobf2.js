@@ -2,7 +2,13 @@
 //Import JSON file here for DOM Manipulation
 import Jobb from './starter-code/data.json' assert {type:'json'};
 import {loadJobListings as loadGridItems} from './job.js';
-// let darkMode=false;
+
+
+//Get Local Settings State for site
+const mainPage=document.querySelector('.brand');
+const sToggle=document.querySelector('#mode_button');
+
+sToggle.addEventListener('click',toggleSiteTheme);
 
 
 $(document).ready(function(){
@@ -28,31 +34,12 @@ $(document).ready(function(){
         }
     });
 
-    
-
-    //DarkMode Switch settings
-    $('.switch1').on('click',()=>{
-        $('.switch1').toggleClass('sw1dxn');
-        togSwitch();
-        // console.log($('#mode_button').prop('checked'));
-        //create function to apply dark mode settings
-    });
-
-    $('.swbackgrd').hover(()=>{
+    //Dark Mode Switch hover State
+       $('.swbackgrd').hover(()=>{
         $('.switch1').toggleClass('mode_state');
-    }).on('click',()=>{
-        $('.switch1').toggleClass('sw1dxn');
-        togSwitch();
     });
 
-    //Place eventListener on toggle checkbox to trigger mode settings
-
-
-
-
-
-
-
+    
     $('#search_filter').on('click',()=>{
         $('#search_text').focus();
     });
@@ -164,7 +151,6 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
             }
         }
     }
-    // console.log(arrStr);
     return arrStr;
 }
 
@@ -342,7 +328,6 @@ export function loadJobSpecs(spId){
                 spMreqList.innerHTML=arrSp.requirements.items[j];
                 spdlistSachet.appendChild(spMreqList);
                 spreqListContainer.appendChild(spdlistSachet);
-
             }
         }
 
@@ -405,11 +390,7 @@ export function loadJobSpecs(spId){
         
         $('.specd').css('top', myPl);
         $('.specd').show();
-
-    // }else{
-    //     console.log('I got no records');
     }
-
 }
 
 
@@ -424,12 +405,34 @@ function getSpecRecord (el){
 }
 
 
-//function to toggle switch
-function togSwitch(){
-    let chkState=$('#mode_button').prop('checked');
-    if (chkState){
-        $('#mode_button').prop('checked',false);
-    }else{
-        $('#mode_button').prop('checked',true);
+// Site Color Mode Settings
+//set theme and LocalStorage on Page Load
+setThemeState();
+
+
+function setThemeState() {
+    //Confirm localStorage has a value for Site
+    if (!(localStorage.checked===undefined)){
+        //set theme state of site
+        sToggle.checked=isTrue(localStorage.getItem('checked'));
+
+        //set Page Theme State accordingly
+        toggleSiteTheme();
     }
+}
+
+function toggleSiteTheme(){
+      // Toggle theme based on state of checkbox
+    if (sToggle.checked){
+        mainPage.classList.replace('light','dark');
+    }else{
+        mainPage.classList.replace('dark','light');
+    }
+    //set value of 'checked' key in localStorage
+    localStorage.setItem('checked',sToggle.checked);
+}
+
+
+function isTrue(value){
+    return value ==="true";
 }
