@@ -6,6 +6,46 @@ import Jobs from './starter-code/data.json' assert {type:'json'};
 import {loadJobSpecs} from './jobf2.js';
 
 
+//Get Local Settings State for site
+const mainPage=document.querySelector('.brand');
+const sToggle=document.querySelector('#mode_button');
+
+//set theme and LocalStorage on Page Load
+setThemeState();
+
+function setThemeState() {
+    //Confirm localStorage has a value for Site
+    if (!(localStorage.checked===undefined)){
+        //set theme state of site
+        sToggle.checked=isTrue(localStorage.getItem('checked'));
+
+        //set Page Theme State accordingly
+        toggleSiteTheme();
+    }
+}
+
+function toggleSiteTheme(){
+      // Toggle theme based on state of checkbox
+    if (sToggle.checked){
+        mainPage.classList.replace('light','dark');
+    }else{
+        mainPage.classList.replace('dark','light');
+    }
+
+    //set value of 'checked' key in localStorage
+    localStorage.setItem('checked',sToggle.checked);
+}
+
+
+function isTrue(value){
+    return value ==="true";
+}
+
+/// Add Event Listener to change Theme once value of checkbox changes
+sToggle.addEventListener('change',toggleSiteTheme);
+
+
+
 //Function to Load Job Grid Items
 export const loadJobListings=((Jobls=Jobs)=>{
 
@@ -166,4 +206,8 @@ function LoadBasics(){
 }
 
 // LoadBasics()
+
+
+
+
 
