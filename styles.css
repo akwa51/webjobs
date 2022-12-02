@@ -21,26 +21,8 @@ body{
     margin:0 auto;
 }
 
-:root{
-    --main-bg: #f4f6f8;
-    --caption-color:#FFFFFF;
-    --switch-btn-color:#5964E0;
-    --text-bg: #FFFFFF;
-    --button-bg: #5964E0;
-    --button-bg2: #939BF4;
-    --text-head:#19202D;
-    --text-main:#6E8098;
-    --check-hover:#5964E0;
-    --company-site-forebtn:#5964E0;
-    --company-site-rearbtn:#5964E01A;
-    --check-idle:#19202D;
-    --job-sptext-main:#6E8098;
-    --company-site-hoverbtn:#5964e059;
-}
-
-
+/* Mode Switch And Color Settings  */
 .light{
-
     --main-bg: #f4f6f8;
     --caption-color:#FFFFFF;
     --switch-btn-color:#5964e0;
@@ -50,7 +32,8 @@ body{
     --text-head:#19202D;
     --text-main:#6E8098;
     --check-hover:#5964E0;
-    --check-idle:#19202D;
+    --check-idle:#19202D1A;
+    --check-border-bg:#ffffff1A;
     --company-site-forebtn:#5964E0;
     --company-site-rearbtn:#5964E01A;
     --job-sptext-main:#6E8098;
@@ -59,13 +42,21 @@ body{
 
 .dark{
     --main-bg: #121721;
+    --caption-color:#FFFFFF;
+    --switch-btn-color:#5964E0;
     --text-bg:#19202D;
+    --button-bg: #5964E0;
+    --button-bg2: #939BF4;
     --text-head:#FFFFFF;
+   --text-main:#6E8098;
+   --check-hover:#5964E0;
     --company-site-btn:#FFFFFF;
     --job-sptext-main:#9DAEC2;
     --company-site-forebtn:#FFFFFF;
     --company-site-rearbtn:#ffffff1A;
     --company-site-hoverbtn:#FFFFFF40;
+    --check-idle:#ffffff1A;
+    --check-border-bg:#19202D1A;
 }
 
 
@@ -213,17 +204,10 @@ body{
     background-color:var(--button-bg);
 }
 
-#mode_button:checked + .switch1{
-    /* background:#01f4fd; */
-    position: absolute;
+#mode_button:checked ~ .switch1{
+    /* background:var(--button-bg); */
     transform: translateX(30px);
 }
-
-.sw1dxn{
-    display: block;
-    transform: translateX(30px);
-}
-
 
 #mode_button{
     position: absolute;
@@ -232,31 +216,6 @@ body{
     opacity: 0;
     user-select: none;
   }
-
-/* #mode_button{
-    outline: none;
-    width: 48px;
-    height: 24px;
-    position: relative;
-    appearance: none;
-    mix-blend-mode: normal;
-    background-color: #FFFFFF;
-    margin:auto 8px;
-    cursor: pointer;
-    border-radius: 12px;
-    border: 1px solid #5964E0;
-} */
-
-/* #mode_button::before{
-    content: "";
-    position: absolute;
-    top:4px;
-    left: 3px;
-    width:14px;
-    height: 14px;
-    border-radius: 50px;
-    background-color: #5964E0;
-} */
 
 .mode_state,#btnSearch:hover,
 #btn_jobs:hover,.switch1:hover,
@@ -298,6 +257,7 @@ body{
     border: none;
     opacity: 0.5;
     color:var(--text-head);
+    background-color: var(--text-bg);
 }
 
 #search_filter{
@@ -335,12 +295,14 @@ body{
     border: none;
     opacity: 0.5;
     color:var(--text-head);
+    background-color: var(--text-bg);
     /* border: 1px solid black; */
 }
 
 /* fulltime filter Implementation*/
 
 /* let's implement a custom checkbox 01 Dec 2022*/ 
+/* .................................................. */
 .fcontain{
     display: block;
     position:relative;
@@ -365,9 +327,8 @@ body{
     height: 28px;
     width: 28px;
     background-color: var(--check-idle);
-    border:2px solid var(--text-bg);
+    border:2px solid var(--check-border-bg);
     border-radius: 3px;
-    opacity: 0.1;
 }
 
 /* On mouse-over, add a custom blue background color */
@@ -405,13 +366,16 @@ body{
    transform: rotate(35deg);
 }
 
+/* ...................................................... */
 /* End of checkbox line of action */
+/* ////////////////////////////////////////////////// */
 
 #lblfulltime{
     width: 110px;
     height: 16px;
     margin-left: 72px;
     cursor: pointer;
+    color:var(--text-head);
 }
 
 #btnSearch{
@@ -1059,7 +1023,6 @@ body{
     display: flex;
     /* justify-content: space-between; */
     position:relative;
-
 }
 
 .splistSachet{
