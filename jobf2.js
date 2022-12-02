@@ -7,6 +7,7 @@ import {loadJobListings as loadGridItems} from './job.js';
 //Get Local Settings State for site
 const mainPage=document.querySelector('.brand');
 const sToggle=document.querySelector('#mode_button');
+const bigContainer=document.getElementById('#mid_Container');
 
 sToggle.addEventListener('click',toggleSiteTheme);
 
@@ -70,8 +71,8 @@ $(document).ready(function(){
         let sContract=$('#full_part').prop('checked')
 
         $('.mid_Grid').empty();
-
         $('#btn_jobs').hide();
+        // $('#eMsg').hide();
 
         // document.getElementById('eMsg').classList.remove('eShow');
         // document.getElementById('eMsg').classList.add('eHide');
@@ -88,8 +89,14 @@ $(document).ready(function(){
       
                 //display message that No Records Exist
 
-                // document.getElementById('eMsg').classList.remove('eHide');
-                // document.getElementById('eMsg').classList.add('eShow');
+                //create the error messages
+                let errTag=document.createElement('div');
+                errTag.classList.add('errShow');
+                errTag.setAttribute('id','eMsg');
+                errTag.innerHTML='No Such Records Exist. Kindly Refine Search Criteria!';
+                bigContainer.appendChild(errTag);
+                console.log(bigContainer.children);
+                console.log(errTag.innerHTML);
             }
 
         }else{

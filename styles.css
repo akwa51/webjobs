@@ -701,7 +701,7 @@ body{
     left:350px;
     text-align: center;
     position: absolute;
-    z-index: 3;
+    z-index: 55;
 }
 
 /* Stylings for Job Specification Details*/
