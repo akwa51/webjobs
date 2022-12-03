@@ -1,14 +1,10 @@
 //Get JSON File
-
-///Loading JSON without fetch method
-
 import Jobs from './starter-code/data.json' assert {type:'json'};
 import {loadJobSpecs} from './jobf2.js';
 
 
 //Function to Load Job Grid Items
 export const loadJobListings=((Jobls=Jobs)=>{
-
     ///Get Main Grid container
     const main=document.getElementById('job_List');
     main.classList.add('mid_Grid')
@@ -103,7 +99,6 @@ export const loadJobListings=((Jobls=Jobs)=>{
 
 
 loadJobListings();
-
 
 function getLogoBackColor(cName){
     switch (cName) {
