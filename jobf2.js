@@ -7,7 +7,7 @@ import {loadJobListings as loadGridItems} from './job.js';
 //Get Local Settings State for site
 const mainPage=document.querySelector('.brand');
 const sToggle=document.querySelector('#mode_button');
-const bigContainer=document.getElementById('#mid_Container');
+const bigContainer=document.getElementById('mid_Container');
 
 sToggle.addEventListener('click',toggleSiteTheme);
 
@@ -72,31 +72,19 @@ $(document).ready(function(){
 
         $('.mid_Grid').empty();
         $('#btn_jobs').hide();
-        // $('#eMsg').hide();
-
-        // document.getElementById('eMsg').classList.remove('eShow');
-        // document.getElementById('eMsg').classList.add('eHide');
-        
+        $('#eMsg').hide();
 
         if (sSearch!=='' || sLocation!=='' || sContract==true){   
            
             let newArr=jobSearch(sSearch,sLocation,sContract);
 
-            if (newArr){
+            if (newArr.length>0){
                 loadGridItems(newArr);
 
             }else{
       
                 //display message that No Records Exist
-
-                //create the error messages
-                let errTag=document.createElement('div');
-                errTag.classList.add('errShow');
-                errTag.setAttribute('id','eMsg');
-                errTag.innerHTML='No Such Records Exist. Kindly Refine Search Criteria!';
-                bigContainer.appendChild(errTag);
-                console.log(bigContainer.children);
-                console.log(errTag.innerHTML);
+                $('#eMsg').show();
             }
 
         }else{
@@ -120,6 +108,8 @@ $(document).ready(function(){
   
 });
 
+//create new error message
+errMessageCreate();
 
 //Function to filter out Job Listings based on selected options
 function jobSearch (searchStr='',strLocation='',strContract=false){
@@ -414,6 +404,7 @@ function getSpecRecord (el){
 
 // Site Color Mode Settings
 //set theme and LocalStorage on Page Load
+// /......................................................./ 
 setThemeState();
 
 
@@ -443,3 +434,33 @@ function toggleSiteTheme(){
 function isTrue(value){
     return value ==="true";
 }
+//..................................................../
+
+
+// //create Error Message Form and hide
+// ...................................................../
+function errMessageCreate(){
+    let errTag=document.createElement('div');
+    errTag.classList.add('errShow');
+    errTag.setAttribute('id','eMsg');
+    errTag.innerHTML='No Such Record Exists. Kindly Refine Search Criteria!';
+    bigContainer.appendChild(errTag);
+    errTag.style.display='none';
+}
+
+
+// JS Media Query Functions
+//@768px window Size make some changes
+function changeTextW(winWidth){
+    if (winWidth.matches){
+        $('#search_text').attr('placeholder','Filter by title...');
+        $('#lblfulltime').html('Full Time');
+    }else{
+         $('#search_text').attr('placeholder','Filter by title,company,expertise...');
+         $('#lblfulltime').html('Full Time Only');
+    }
+}
+
+let windowSize=window.matchMedia('(max-width:768px)');
+changeTextW(windowSize);
+windowSize.addEventListener('change',changeTextW);
