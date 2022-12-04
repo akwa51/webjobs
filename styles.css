@@ -45,6 +45,8 @@ body{
     --company-site-hoverbtn:#5964e059;
     --err-message-bg:#5964E01A;
     --search-bar-section:#6e809833;
+    --filter-icon-color:#6E8098;
+    --modal-bg-color:#00000080;
 }
 
 .dark{
@@ -66,6 +68,8 @@ body{
     --check-border-bg:#19202D1A;
     --err-message-bg:#FFFFFF40;
     --search-bar-section:#6e809833;
+    --filter-icon-color:#FFFFFF;
+    --modal-bg-color:#00000080;
 }
 
 
@@ -1243,9 +1247,236 @@ body{
         width:593px;
     }
 
+    /* Footer Styling */
+    .specd{
+        width:100vw;
+        height: 96px;
+        margin-top: 53px;
+        position:absolute;
+        border-radius: 6px;
+        background-color:var(--text-bg);
 
+        /* centering div */
+        left:0;
+        right: 0;
+        margin-left:auto;
+        margin-right:auto;
+    }   
 
-    
+    #inf_container{
+        width: 689px;
+        height: 51px;
+        margin: 23px 39px;
 
-
+    }
 }
+
+
+/* Created Search div for Mobile Search Functionality */
+
+#mobile_search{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 327px;
+    background-color: var(--text-bg) ;
+    border-radius: 6px;
+    top:20px;
+    left:500px;
+    cursor: pointer;
+}
+
+#mobile_text{
+    width:105px;
+    height: 16px;
+    margin-left: 24px;
+    border: none;
+    opacity: 0.5;
+    color:var(--text-head);
+    background-color: var(--text-bg);
+}
+
+#mobile_search svg {
+    display: inline;
+    margin-left: 90px;
+    cursor: pointer;
+  }
+
+  #spfilter{
+    fill:var(--filter-icon-color);
+  }
+
+ 
+  #srclogoID{
+    fill:var(--caption-color);
+  }
+
+  #search_bg{
+    width:48px;
+    height: 48px;
+    background-color: var(--button-bg);
+    margin-left:24px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #search_bg svg{
+    display: inline;
+    margin-left:12px;
+    margin-top:12px;
+  }
+
+  /* ..............End of Mobile Search Page.................. */
+
+  @media screen and (min-width:375px) and (max-width:400px){
+
+    #header_container,#img_container{
+        width: 375px;
+    }
+
+    .img_moon{
+        font-size: 0px;
+    }
+
+    .img_head1{
+        background: url(./starter-code/assets/mobile/bg-pattern-header.svg); 
+        background-repeat: no-repeat;
+        width: 375px;
+        height:136px;
+    }
+
+    #caption_container{
+        width:327px;
+        top:32px;
+        left: 0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #search_container{
+        top:20px;
+        left:10px;
+    }
+
+    #mobile_search{
+        top:96px;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #search_container{
+        width: 327px;
+        height:217px;
+        flex-direction: column;
+        /* z-index: 5; */
+
+        /* left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+
+        top:50%; */
+
+        /* position: fixed; */
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #fulltime_filter{
+        width: 327px;
+        height: 144px;
+        border-top:1px solid var(--search-bar-section);
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+    }
+
+    #btnSearch{
+        width: 279px;
+        height:48px;
+        margin:24px 24px 31px 24px;
+    }
+
+    .checkmark{
+        margin-top:28px;
+        margin-left:-170px;
+        /* margin-right:16px; */
+    }
+
+    #lblfulltime{
+        margin-top:20px;
+        margin-left:-90px;
+    }
+
+    #location_img{
+        margin-left: 24px;
+    }
+
+    /* Create a Modal Div for Mobile Searches */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 25;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background-color: var(--modal-bg-color);
+      }
+
+    /* End of Mobile Search Implementation  */
+
+    .mid_Grid{
+        display: grid;
+        grid-template-columns: 327px;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 24px;
+    }
+
+    #mid_Container{
+        width:327px;
+        top:130px;
+        position: absolute; 
+
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        /* padding-bottom: 10px; */
+    }
+
+    .jobItem{
+        height: 253px;
+        width: 327px;
+        position: relative;
+        /* border:1px solid transparent; */
+    }
+
+
+    .jobSubItem{
+        height: 226px;
+        width: 327px;
+         margin-top: 22px;
+       /* position:absolute; */
+        /*  background-color:  var(--text-bg);
+        border:1px solid var(--text-bg);
+        border-radius: 6px;
+        font-size: 0px; */
+    }
+
+    #newjob{
+        width: max-content;
+        height: auto;
+        margin:40px auto 0px auto;
+        padding-bottom: 100px;
+    }
+  }

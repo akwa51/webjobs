@@ -24,23 +24,32 @@
                 <div id="night" class="img_moon"></div>
             </div>
         </div>
-        <div id="search_container">
-            <div id="search_filter">
-                <div id="search_img"></div>
-                <input id="search_text" class="font_16_2 font_40" type="text" value="" placeholder="Filter by title,company,expertise...">
+        <div id="mobile_search">
+            <input id="mobile_text" class="font_16_2 font_40" type="text" value="" placeholder="Filter by title...">
+            <svg id="sgfilter" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path id="spfilter" d="M19.108 0H.86a.86.86 0 00-.764.455.833.833 0 00.068.884l6.685 9.202.007.01c.242.32.374.708.375 1.107v7.502a.825.825 0 00.248.594.865.865 0 00.942.18l3.756-1.4c.337-.1.56-.41.56-.784v-6.092c0-.399.132-.787.375-1.108l.007-.009 6.685-9.202c.19-.26.217-.6.068-.884A.86.86 0 0019.108 0z" fill="#6E8098" fill-rule="nonzero"/></svg>
+            <div id="search_bg">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path id="srclogoID" d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z" fill="#5964E0" fill-rule="nonzero"/></svg>
             </div>
-            <div id="location_filter">
-                <div id="location_img"></div>
-                <input id="location_text" class="normal_font font_40" type="text" value="" placeholder="Filter by location...">
+        </div>
+        <div id="search_wrap" class="modal">
+            <div id="search_container" class="innermodal">
+                <div id="search_filter">
+                    <div id="search_img"></div>
+                    <input id="search_text" class="font_16_2 font_40" type="text" value="" placeholder="Filter by title,company,expertise...">
+                </div>
+                <div id="location_filter">
+                    <div id="location_img"></div>
+                    <input id="location_text" class="normal_font font_40" type="text" value="" placeholder="Filter by location...">
+                </div>
+                <div id="fulltime_filter">
+                    <label class="fcontain">
+                        <input id="full_part" class="" type="checkbox" value="None"> 
+                        <span class="checkmark"></span>                   
+                    </label>
+                    <label for="full_part" id="lblfulltime" class="bold_font_70 font_size_16">Full Time Only</label>
+                    <button id="btnSearch" class="bold_font_70 font_size_16">Search</button>
+                </div> 
             </div>
-            <div id="fulltime_filter">
-                <label class="fcontain">
-                    <input id="full_part" class="" type="checkbox" value="None"> 
-                    <span class="checkmark"></span>                   
-                </label>
-                <label for="full_part" id="lblfulltime" class="bold_font_70 font_size_16">Full Time Only</label>
-                <button id="btnSearch" class="bold_font_70 font_size_16">Search</button>
-            </div> 
         </div>
     </header>
 
