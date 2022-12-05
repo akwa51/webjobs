@@ -1232,6 +1232,11 @@ body{
 
     .edheadbag{
         width: 689px;
+        height: fit-content;
+        display: flex;
+    
+        background-color:var(--text-bg);
+        border-radius: 6px;
     }
 
     .jobadvcontainer{
@@ -1270,7 +1275,6 @@ body{
 
     }
 }
-
 
 /* Created Search div for Mobile Search Functionality */
 
@@ -1372,16 +1376,7 @@ body{
         width: 327px;
         height:217px;
         flex-direction: column;
-        /* z-index: 5; */
 
-        /* left:0;
-        right:0;
-        margin-left: auto;
-        margin-right: auto;
-
-        top:50%; */
-
-        /* position: fixed; */
         left: 0;
         right: 0;
         top: 0;
@@ -1466,11 +1461,11 @@ body{
         height: 226px;
         width: 327px;
          margin-top: 22px;
-       /* position:absolute; */
-        /*  background-color:  var(--text-bg);
+        position:absolute; 
+        background-color:  var(--text-bg);
         border:1px solid var(--text-bg);
         border-radius: 6px;
-        font-size: 0px; */
+        font-size: 0px;
     }
 
     #newjob{
@@ -1479,4 +1474,167 @@ body{
         margin:40px auto 0px auto;
         padding-bottom: 100px;
     }
+
+    .errShow{
+        height: 90px;
+        width: 327px;
+        background:var(--err-message-bg);
+        color:var(--text-head);
+        font-weight: 700;
+        border-radius: 10px;
+        font-size:15px;
+        padding:20px;
+        overflow:hidden;
+        text-align: center;
+        position: absolute;
+        z-index: 15;
+        
+        
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+
+    }
+
+
+    /* Work on Mobile Job Detail Footer  */
+    /* Footer Styling */
+    .specd{
+        width:100vw;
+        height: 96px;
+        margin-top: 53px;
+        position:absolute;
+        border-radius: 6px;
+        background-color:var(--text-bg);
+
+        /* centering div */
+        left:0;
+        right: 0;
+        margin-left:auto;
+        margin-right:auto;
+    }   
+
+    #spec_foot{
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+    }
+
+    #iapply{
+        width: max-content;
+        height: auto;
+    }
+
+    #btn_apply{
+        width:327px;
+        height: 48px;
+    }
+
+    /* Let's work on head section of Job Detail Page */
+
+    .edheadbag{
+        width: 327px;
+        height: 205px;
+        display: flex;
+        flex-direction: column;
+    
+        background-color:var(--text-bg);
+        border-radius: 6px;
+    }
+
+    .compheadbag{
+        width:100% ;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        /* justify-content:center; */
+        align-items: center;
+        justify-items: center;
+        background-color:var(--text-bg);
+        border-radius: 6px;
+    }
+
+    .hcompdsite{
+        width:max-content;
+        height: max-content;
+        margin-top:11px;
+
+        left:0px;
+        right:0px;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    .hcompdbtn{
+       width:147px;
+       height: 48px;
+       position: relative;
+       border-radius: 5px;
+       border-color:transparent;
+       margin-right: 0px;
+       margin-top:24px;
+       background-color: var(--company-site-rearbtn);
+   }
+
+   .hcompnbag{
+        width:max-content;
+        height: max-content;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+
+        left:0;
+        right:0;
+        margin:auto;
+    }
+
+
+    .scomphbag{
+        width: max-content;
+        height: max-content;
+        margin-left: 0px;
+        margin-top:49px;
+        text-align: center;
+        background-color:var(--text-bg)
+    }
+
+
+
+    /* Head Company Logo sizes */
+
+    .cdblogo{
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        position: absolute;
+
+        left:0px;
+        right:0px;
+        top:-25px;
+        margin:auto;
+    }
+
+    /* .scoot_Size{
+        width: 40px;
+        height: 11.42px;
+    } */
+
+    .scoot_dimg,.blogr_dimg,.vector_dimg{
+        width: 100%;
+        height: auto;
+    }
+
+    .scoot_dsize,.blogr_dsize,.vector_dsize{
+        width: max-content;
+        height: max-content;
+        /* margin:15px 5px; */
+        background-size:contain;  
+        
+        left: 0;
+        right: 0;
+        margin: 15px auto;
+    }
+
   }

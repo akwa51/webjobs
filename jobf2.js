@@ -8,8 +8,12 @@ import {loadJobListings as loadGridItems} from './job.js';
 const mainPage=document.querySelector('.brand');
 const sToggle=document.querySelector('#mode_button');
 const bigContainer=document.getElementById('mid_Container');
+const modal=document.querySelector('#search_wrap');
 
 sToggle.addEventListener('click',toggleSiteTheme);
+
+//Modal form window event listener
+window.addEventListener('click',outSideClick);
 
 
 $(document).ready(function(){
@@ -44,7 +48,7 @@ $(document).ready(function(){
     });
 
     //Dark Mode Switch hover State
-       $('.swbackgrd').hover(()=>{
+    $('.swbackgrd').hover(()=>{
         $('.switch1').toggleClass('mode_state');
     });
 
@@ -52,14 +56,17 @@ $(document).ready(function(){
         $('#mobile_text').focus();
     });
 
+
     $('#mobile_text').focus(()=>{
         $(this).attr('placeholder', 'Filter by title...');
     });
 
 
     $('#sgfilter').on('click',()=>{
-        $('#search_container').show();
+        $('#search_wrap').show();
+        $('#mobile_text').attr('placeholder', 'Enter job desc...');
     });
+
 
     $('#search_filter').on('click',()=>{
         $('#search_text').focus();
@@ -87,18 +94,29 @@ $(document).ready(function(){
     $('#search_bg').on('click',()=>{
         //verify on items selected if okay to for search
         let sSearch=$('#mobile_text').val().trim().toLowerCase();
-        let sLocation=$('#location_text').val().trim().toLowerCase();
-        let sContract=$('#full_part').prop('checked');
-
-        displayJobListing(sSearch,sLocation,sContract);
+        displayJobListing(sSearch);
     });
 
     $('#btnSearch').on('click',()=>{
+        let sSearch='';
+        let sLocation='';
+        let sContract=false;
+
+        sLocation=$('#location_text').val().trim().toLowerCase();
+        sContract=$('#full_part').prop('checked');
 
         //verify on items selected if okay to for search
-        let sSearch=$('#search_text').val().trim().toLowerCase();
-        let sLocation=$('#location_text').val().trim().toLowerCase();
-        let sContract=$('#full_part').prop('checked');
+        if (!$('#mobile_search').is(":hidden")){
+           sSearch=$('#mobile_text').val().trim().toLowerCase();
+
+           $('#search_wrap').hide();
+           $('#mobile_text').attr('placeholder', 'Filter by title...');
+           $('#full_part').prop('checked',false);
+           $('#location_text').val('');
+        }else{
+            sSearch=$('#search_text').val().trim().toLowerCase();
+        }
+
 
         displayJobListing(sSearch,sLocation,sContract);
     });
@@ -158,13 +176,9 @@ function jobSearch (searchStr='',strLocation='',strContract=false){
     return arrStr;
 }
 
-function displayJobListing(sSearch,sLocation,sContract){
+function displayJobListing(sSearch='',sLocation='',sContract=false){
 
-    // //verify on items selected if okay to for search
-    // let sSearch=$('#search_text').val().trim().toLowerCase();
-    // let sLocation=$('#location_text').val().trim().toLowerCase();
-    // let sContract=$('#full_part').prop('checked')
-
+    //verify on items selected if okay to for search
     $('.mid_Grid').empty();
     $('#btn_jobs').hide();
     $('#eMsg').hide();
@@ -204,7 +218,7 @@ export function loadJobSpecs(spId){
         $('#search_container').hide();
         $('#mobile_search').hide();
 
-        console.log($('#mobile_text').val());
+        // console.log($('#mobile_text').val());
 
     // let specId=$('.jobSpecialty').attr('id');
         $('.spec_show').empty();
@@ -491,6 +505,17 @@ function errMessageCreate(){
     errTag.style.display='none';
 }
 
+//Modal dialog clearance
+function outSideClick(e){
+
+    if (e.target==modal){
+        modal.style.display='none'
+        $('#mobile_text').attr('placeholder', 'Filter by title...');
+        $('#full_part').prop('checked',false);
+        $('#location_text').val('');
+    }
+
+}
 
 // JS Media Query Functions
 //@768px window Size make some changes
@@ -513,11 +538,11 @@ windowSize.addEventListener('change',tabletTextMode);
 function mobileViewMode(mobileWidth){
     if(mobileWidth.matches){
         $('#search_filter').hide();
-        $('#search_container').hide();
+        // $('#search_container').hide();
         $('#mobile_search').show();
     }else{
-        // $('#mobile_search').hide();
-        // $('#search_text').show();
+        $('#mobile_search').hide();
+        $('#search_text').show();
     }
 }
 
