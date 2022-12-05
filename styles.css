@@ -1621,12 +1621,16 @@ body{
         height: 11.42px;
     } */
 
-    .scoot_dimg,.blogr_dimg,.vector_dimg{
+    .scoot_dimg,.blogr_dimg,.vector_dimg,.creative_dimg,
+    .coffeeroasters_dimg,.officelite_dimg,.pod_dimg,
+    .pomodoro_dimg{
         width: 100%;
         height: auto;
     }
 
-    .scoot_dsize,.blogr_dsize,.vector_dsize{
+    .scoot_dsize,.blogr_dsize,.vector_dsize,.creative_dsize,
+    .coffeeroasters_dsize,.officelite_dsize,.pod_dsize,
+    .pomodoro_dsize,.maker_dsize{
         width: max-content;
         height: max-content;
         /* margin:15px 5px; */
