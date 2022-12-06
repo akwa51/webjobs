@@ -540,6 +540,8 @@ function mobileViewMode(mobileWidth){
         $('#search_filter').hide();
         // $('#search_container').hide();
         $('#mobile_search').show();
+
+        
     }else{
         $('#mobile_search').hide();
         $('#search_text').show();

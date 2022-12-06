@@ -722,8 +722,7 @@ body{
     left:355px;
     padding-left: 0px;
     margin-left: 0px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-radius: 6px;
     /* border: 1px solid yellow; */
 }
 
@@ -1228,6 +1227,12 @@ body{
     .spec_show{
         width:689px;
         left:48px;
+        height: max-content;
+        position:absolute;
+        top:120px;
+        padding-left: 0px;
+        margin-left: 0px;
+        border-radius: 6px;
     }
 
     .edheadbag{
@@ -1243,6 +1248,9 @@ body{
     width: 577px;
     height: 87px; 
     margin: 48px auto 40px auto;
+    display: flex;
+    justify-content:space-between;
+    place-items: center center;
     }
 
     .spjbescribe,.spjbReqContents,
@@ -1498,13 +1506,23 @@ body{
 
     }
 
-
+    .spec_show{
+        width:327px;
+        height: max-content;
+        position:absolute;
+        top:-90px;
+        left:0px;
+        right:0px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 6px;
+    }
     /* Work on Mobile Job Detail Footer  */
     /* Footer Styling */
     .specd{
         width:100vw;
         height: 96px;
-        margin-top: 53px;
+        margin-top: 64px;
         position:absolute;
         border-radius: 6px;
         background-color:var(--text-bg);
@@ -1530,6 +1548,7 @@ body{
     #btn_apply{
         width:327px;
         height: 48px;
+        margin-top:0px;
     }
 
     /* Let's work on head section of Job Detail Page */
@@ -1622,15 +1641,17 @@ body{
     } */
 
     .scoot_dimg,.blogr_dimg,.vector_dimg,.creative_dimg,
-    .coffeeroasters_dimg,.officelite_dimg,.pod_dimg,
-    .pomodoro_dimg{
+    .coffeeroasters_dimg,.officelite_dimg,.pod_dimg,.maker_dimg,
+    .pomodoro_dimg,.typemaster_dimg,.crowdfund_dimg,
+    .mastercraft_dimg{
         width: 100%;
         height: auto;
     }
 
     .scoot_dsize,.blogr_dsize,.vector_dsize,.creative_dsize,
     .coffeeroasters_dsize,.officelite_dsize,.pod_dsize,
-    .pomodoro_dsize,.maker_dsize{
+    .pomodoro_dsize,.maker_dsize,.typemaster_dsize,
+    .crowdfund_dsize,.mastercraft_dsize{
         width: max-content;
         height: max-content;
         /* margin:15px 5px; */
@@ -1641,4 +1662,129 @@ body{
         margin: 15px auto;
     }
 
+    /* main job detail container */
+
+    .mainjobcdetail{
+        width: 327px;
+        height: max-content;
+        margin-top: 24px;
+        border:1px solid var(--text-bg);
+        background-color: var(--text-bg);
+        border-radius: 5px;
+    }
+
+    /* Job detail advert and requirements listings */
+
+    .jobadvcontainer{
+        width: 327px;
+        height: fit-content; 
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start ;
+        justify-content:flex-start;
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+
+     .spjobadbag{
+        width: 279px;
+        height:max-content;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .spbtnapply{
+        width: 279px;
+        height: 48px;
+        background-color:var(--button-bg);
+        border:var(--button-bg);
+        border-radius: 5px;
+        left:0;
+        right:0;
+        margin-top:50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .spjobSpecialty{
+        width:max-content;
+        height: max-content;
+        font-size: 20px;
+        line-height: 25px;
+        margin-top:8px;
+        margin-bottom: 0px; 
+    }
+
+    .spjoblocation{
+        width: max-content;
+        height: 20px;
+        font-size: 14px;
+        line-height: 17px;
+        margin-top:12px;
+        margin-bottom: 4px;
+        color:var(--button-bg);
+    }
+
+    .spdjbesBag{
+        width:278px;
+        height:max-content;
+        margin:32px auto 0px auto; 
+    }
+    
+    .spjbescribe {
+        width:278px;
+        height:auto;
+        text-align:justify;
+    }
+
+    .spReqLabel{
+        width: max-content;
+        height: fit-content;
+        margin-left:24px;
+        margin-top:40px;
+
+    }
+
+    .spjreqdiv{
+        width:max-content;
+        height:max-content;
+        margin:28px auto 32px auto;
+    }
+
+    .spjbReqContents,.spreqlstBag,.splistBag
+    {
+        width:278px;
+        height:max-content;
+    }
+
+    .spreqMItem{
+        width:242px;
+        height:max-content; 
+    }
+
+    .sptaskMLabel{
+        width: max-content;
+        height: fit-content;
+        margin-left:24px;
+        margin-top:40px;
+    }
+
+    .spseeklstBag{
+        width: max-content;
+        height: fit-content;
+        margin:0 auto 40px auto;
+    }
+
+    #inf_container {
+        width: max-content;
+        height: 51px;
+        margin: 23px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
   }
