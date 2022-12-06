@@ -9,6 +9,7 @@ export const loadJobListings=((Jobls=Jobs)=>{
     const main=document.getElementById('job_List');
     main.classList.add('mid_Grid')
     const count=Jobls.length;
+    let msLen=0;
 
 
     for (let i=0;i<count;i++){
@@ -76,6 +77,13 @@ export const loadJobListings=((Jobls=Jobs)=>{
         jobSpecialty.classList.add('jobSpecialty','font-color-2','bold_font_70');
         jobSpecialty.innerHTML=Jobls[i].position;
         jobBag.appendChild(jobSpecialty);
+
+        //reduce Job Title font Size to accommodate Title Length
+        if (jobSpecialty.getBoundingClientRect().width+32>=mySubItem.getBoundingClientRect().width){
+            console.log(mySubItem.getBoundingClientRect().width);
+            jobSpecialty.style.fontSize='19px';
+        }
+    
         jobSpecialty.addEventListener('click',(e)=>{loadJobSpecs(e.target.id)});
     
         //Company Name
