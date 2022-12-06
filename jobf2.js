@@ -544,7 +544,8 @@ function mobileViewMode(mobileWidth){
         
     }else{
         $('#mobile_search').hide();
-        $('#search_text').show();
+        $('#search_filter').show();
+        // $('#search_text').show();
     }
 }
 

@@ -14,10 +14,11 @@
 }
 
 body{
-    width: 100vw;
+    /* width: 1440px; */
     height:100vh;
     background-color: var(--main-bg);
-    overflow-x: hidden;
+    /* width: 100vw; */
+    /* overflow-x: hidden; */
     padding:0px;
     margin: 0 auto;
 }
@@ -153,8 +154,9 @@ body{
 .img_head1{
    background: url(./starter-code/assets/desktop/bg-pattern-header.svg); 
    background-repeat: no-repeat;
-   background-size: 100% auto;
-   width: 100vw;
+   /* background-size: 100% auto; */
+   /* width: 100vw; */
+   width:1440px;
    height:162px;
   /* margin:0 auto; */
 }
@@ -252,8 +254,13 @@ body{
     width:1110px;
     height: 32px;
     top:45px;
-    left: 165px;
+    /* left: 165px; */
     align-content: center;
+
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 /* head search bar */
@@ -282,6 +289,10 @@ body{
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+#search_wrap{
+    font-size: 0;
 }
 
 /* head location bar */
@@ -418,9 +429,16 @@ body{
     display: flex;
     position: absolute;
     top:120px;
-    left:165px;
+    /* left:165px; */
     background-color: var(--text-bg);
     border-radius: 6px;
+
+    width:max-content;
+    left:0px;
+    right:0px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 
@@ -515,7 +533,7 @@ body{
 /*Job Specialty Styling*/
 
 .jobSpecialty{
-    width:320px;
+    width:max-content;
     height: 22px;
     font-size: 20px;
     line-height: 25px;
@@ -719,11 +737,17 @@ body{
     height: max-content;
     position:absolute;
     top:120px;
-    left:355px;
-    padding-left: 0px;
-    margin-left: 0px;
+    /* left:355px; */
+    /* padding-left: 0px;
+    margin-left: 0px; */
     border-radius: 6px;
     /* border: 1px solid yellow; */
+
+
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .edheadbag{
@@ -1128,13 +1152,27 @@ body{
     #caption_container{
         width:689px;
         top:40px;
-        left: 39px;
+        /* left: 39px; */
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        height: 32px;
+        align-content: center;
+
+        left: 0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* search container */
     #search_container{
-        left:39px;
+        /* left:39px; */
         width:max-content;
+        left:0px;
+        right:0px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #search_img{
@@ -1149,17 +1187,29 @@ body{
     
     #search_filter{
         width: 222px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
 
     #location_filter{
         width:213px;
+        height: 80px;
+        display: flex;
+        align-items: center;
     }
     
     #location_text{
         width:135px;
         height: 20px; 
        line-height:20px;
+
+       border: none;
+       opacity: 0.5;
+       color:var(--text-head);
+       background-color: var(--text-bg);
     }
+
     #fulltime_filter{
         width: 252px;
     }
@@ -1170,6 +1220,8 @@ body{
 
     .checkmark{
         left: 20px;
+        
+
     }
     
     #lblfulltime{
@@ -1177,12 +1229,19 @@ body{
         margin-left: 60px;
     }
 
-    #mid_Container{
-        margin:80px 39px;
+   #mid_Container{
+        width:689px;
+        position:absolute;
+        left:0;
+        right: 0;
+        margin-top:80px;
+        margin-left: auto;
+        margin-right: auto;
     }
+
     .mid_Grid{
         display: grid;
-        grid-template-columns: 339px 339px;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto auto auto auto;
         column-gap: 11px;
         row-gap: 40px;
@@ -1194,7 +1253,7 @@ body{
     }
     .jobSubItem{
         height: 226px;
-        width: 330px;
+        width: 339px;
         margin-top: 22px;
     }
     
@@ -1226,13 +1285,12 @@ body{
     /* Speciality Detail Form */
     .spec_show{
         width:689px;
-        left:48px;
-        height: max-content;
-        position:absolute;
-        top:120px;
-        padding-left: 0px;
-        margin-left: 0px;
-        border-radius: 6px;
+        top:-120px;
+        /* margin-top: 120px; */
+        left:0px;
+        right:0px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .edheadbag{
@@ -1365,12 +1423,14 @@ body{
         right:0;
         margin-left: auto;
         margin-right: auto;
+
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        height: 32px;
+        align-content: center;
     }
 
-    #search_container{
-        top:20px;
-        left:10px;
-    }
 
     #mobile_search{
         top:96px;
@@ -1420,6 +1480,9 @@ body{
 
     #location_img{
         margin-left: 24px;
+        height: 24px;
+        width: 17px;
+        margin-right: 16px;
     }
 
     /* Create a Modal Div for Mobile Searches */
