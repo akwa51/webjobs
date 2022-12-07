@@ -518,6 +518,8 @@ function outSideClick(e){
 }
 
 // JS Media Query Functions
+// ..........................................................................//
+
 //@768px window Size make some changes
 function tabletTextMode(winWidth){
     if (winWidth.matches){
@@ -538,18 +540,17 @@ windowSize.addEventListener('change',tabletTextMode);
 function mobileViewMode(mobileWidth){
     if(mobileWidth.matches){
         $('#search_filter').hide();
-        // $('#search_container').hide();
         $('#mobile_search').show();
-
-        
     }else{
         $('#mobile_search').hide();
         $('#search_filter').show();
-        // $('#search_text').show();
+        $('#search_container').show();
     }
 }
-
-
-let mobSize=window.matchMedia('(min-width:375px) and (max-width:400px)');
+let mobSize=window.matchMedia('(min-width:280px) and (max-width:540px)');
 mobileViewMode(mobSize);
 mobSize.addEventListener('change',mobileViewMode);
+
+
+//@320px window Size make some changes
+
