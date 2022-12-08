@@ -9,7 +9,6 @@ export const loadJobListings=((Jobls=Jobs)=>{
     const main=document.getElementById('job_List');
     main.classList.add('mid_Grid')
     const count=Jobls.length;
-    let msLen=0;
 
 
     for (let i=0;i<count;i++){
@@ -79,10 +78,10 @@ export const loadJobListings=((Jobls=Jobs)=>{
         jobBag.appendChild(jobSpecialty);
 
         //reduce Job Title font Size to accommodate Title Length
-        if (jobSpecialty.getBoundingClientRect().width+32>=mySubItem.getBoundingClientRect().width){
-            console.log(mySubItem.getBoundingClientRect().width);
-            jobSpecialty.style.fontSize='19px';
-        }
+        // if (jobSpecialty.getBoundingClientRect().width+32>=mySubItem.getBoundingClientRect().width){
+        //     console.log(mySubItem.getBoundingClientRect().width);
+        //     jobSpecialty.style.fontSize='19px';
+        // }
     
         jobSpecialty.addEventListener('click',(e)=>{loadJobSpecs(e.target.id)});
     

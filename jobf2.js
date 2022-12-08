@@ -531,7 +531,7 @@ function tabletTextMode(winWidth){
     }
 }
 
-let windowSize=window.matchMedia('(min-width:700px) and (max-width:768px)');
+let windowSize=window.matchMedia('(min-width:700px) and (max-width:920px)');
 tabletTextMode(windowSize);
 windowSize.addEventListener('change',tabletTextMode);
 
@@ -547,7 +547,7 @@ function mobileViewMode(mobileWidth){
         $('#search_container').show();
     }
 }
-let mobSize=window.matchMedia('(min-width:280px) and (max-width:540px)');
+let mobSize=window.matchMedia('(min-width:280px) and (max-width:767px)');
 mobileViewMode(mobSize);
 mobSize.addEventListener('change',mobileViewMode);
 
