@@ -43,6 +43,8 @@ body{
     --search-bar-section:#6e809833;
     --filter-icon-color:#6E8098;
     --modal-bg-color:#00000080;
+    --mobile-search-bg:#5964E0;
+    --mobile-filter-bg:#5964E01A;
 }
 
 .dark{
@@ -66,6 +68,8 @@ body{
     --search-bar-section:#6e809833;
     --filter-icon-color:#FFFFFF;
     --modal-bg-color:#00000080;
+    --mobile-search-bg:#5964E0;
+    --mobile-filter-bg:#5964E01A;
 }
 
 
@@ -166,9 +170,9 @@ body{
     background: url(./starter-code/assets/desktop/icon-moon.svg);
     background-repeat: no-repeat;
     height: 20px;
-    width: 20px;
+    width: 18px;
     margin-top: 6px;
-    margin-left: 5px;
+    margin-left: 4px;
 }
 
 #theme_container{
@@ -450,7 +454,7 @@ body{
 
 .mid_Grid{
     display: grid;
-    grid-template-columns: calc(0.24306*100vw) calc(0.24306*100vw) calc(0.24306*100vw);
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 253px 253px 253px auto;
     column-gap: calc(0.020833*100vw);
     row-gap: 40px;
@@ -461,7 +465,6 @@ body{
     height: 253px;
     width: calc(0.24306*100vw);
     position: relative;
-    /* border:1px solid transparent; */
 }
 
 .jobSubItem{
@@ -953,7 +956,7 @@ body{
 .spReqLabel{
     width: max-content;
     height: fit-content;
-    margin-left:48px;
+    margin-left:43px;
     margin-top:40px;
 }
 
@@ -1002,13 +1005,13 @@ body{
 .sptaskMLabel{
     width: max-content;
     height: fit-content;
-    margin-left:48px;
+    margin-left:43px;
     margin-top:48px;
 }
 
 
 .spseeklstBag{
-    width:calc(0.41875*100vw);
+    width:calc(0.44375*100vw);
     height:max-content;
     text-align: left;
     margin:24px auto 48px auto;
@@ -1099,7 +1102,7 @@ body{
   #search_bg{
     width:48px;
     height: 48px;
-    background-color: var(--button-bg);
+    background-color: var(--mobile-search-bg);
     margin-left:24px;
     border-radius: 5px;
     cursor: pointer;
@@ -1116,7 +1119,7 @@ body{
 /* Media Queries */
 
 /* Standard Laptops */
-@media screen and (max-width:1280px){
+@media screen and (min-width:1025px) and (max-width:1280px){
 
     .checkmark{
         left:16px;
@@ -1128,7 +1131,7 @@ body{
     }
 
     #btnSearch{
-        width: 110px;
+        width: 123px;
         margin-left: calc(0.020*100vw);
     }
 
@@ -1143,6 +1146,16 @@ body{
 
     .jobSpecialty{
         font-size: 18px;
+    }
+
+    
+    .spReqLabel{
+        margin-left:38px;
+    }
+
+
+    .sptaskMLabel{
+        margin-left:38px;
     }
 
 
@@ -1150,35 +1163,94 @@ body{
 }
 /* Mini Laptops */
 
-@media screen and (max-width:1024px){
+@media screen and (min-width:921px) and (max-width:1024px){
 
     .checkmark{
         left:16px;
     }
 
     #lblfulltime{
-        width: fit-content;
+        width: calc(0.160*100vw);;
         font-size: 16px;
         margin-left: calc(0.048*100vw);
     }
 
+    #search_img{
+        margin-left: 20px;
+    }
+
+    #search_text{
+        width: 241px;
+    }
+
+    #search_filter{
+        /* width:310px; */
+    width:  calc(0.297867*100vw)
+    }
+
+    #location_img{
+        margin-left: 18px;
+    }
+
+    #fulltime_filter{
+        width:calc(0.2653*100vw)
+    }
+
+    #location_filter{
+        width: calc(0.206833*100vw)
+    }
+
     #btnSearch{
-        width: 90px;
-        margin-left: calc(0.020*100vw);
+        width: 123px;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    /* Job Bag Container */
+    .jobBag{
+        width: max-content;
+        margin-left: 12px;
+    }
+
+    .logoBag{
+        left:15px;
+    }
+
+    .sTime,.sPoint,.sType{
+        font-size: 14px;
     }
 
     .spjobSpecialty{
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .spjobadbag{
-        width: max-content;
+        width: calc(0.3*100vw);
     }
 
 
     .jobSpecialty{
-        font-size: 18px;
+        font-size: 16px;
     }
+
+    .scomphbag{
+        margin-left: 20px;
+    }
+
+    .hcompdbtn{
+        margin-right: 24px;
+    }
+
+
+    .spReqLabel{
+        margin-left:30px;
+    }
+
+
+    .sptaskMLabel{
+        margin-left:30px;
+    }
+
 }
 
 /* Tablet Mode1 */
@@ -1275,8 +1347,6 @@ body{
 
     .checkmark{
         left: 20px;
-        
-
     }
     
     #lblfulltime{
@@ -2793,7 +2863,6 @@ body{
     .jobBag{
         height: 147px;
         width: 263px;
-        /* border:1px solid greenyellow; */
         position: relative;
         margin-top: 49px;
         margin-bottom: 28px;
@@ -2923,6 +2992,10 @@ body{
 /* Very Small Mobile Devices */
   @media screen and (max-width:280px){
 
+    /* body{
+        overflow-x: hidden;
+    } */
+
     #header_container,#img_container{
         width:100vmin;
         height:136px;
@@ -2931,7 +3004,6 @@ body{
     .img_head1{
         background: url(./starter-code/assets/mobile/bg-pattern-header.svg); 
         background-repeat: no-repeat;
-        /* height:136px; */
         background-size: 100vmin 136px;
     }
 
@@ -2979,7 +3051,7 @@ body{
 
     #search_container{
         width: 88vw;
-        height:217px;
+        height:210px;
         flex-direction: column;
 
         left: 0;
@@ -2998,19 +3070,19 @@ body{
     }
 
     #btnSearch{
-        width: 240px;
+        width: 74vw;
         height:48px;
-        margin:24px auto 31px auto;
+        margin:31px auto 24px auto;
     }
 
     .checkmark{
         margin-top:28px;
-        margin-left:-170px;
+        margin-left:-121px;
     }
 
     #lblfulltime{
         margin-top:20px;
-        margin-left:-90px;
+        margin-left:-20px;
     }
 
     #location_img{
@@ -3018,6 +3090,11 @@ body{
         height: 24px;
         width: 17px;
         margin-right: 16px;
+    }
+
+    #location_filter{
+        width: 88vw;
+        height:65px;
     }
 
     .mid_Grid{
@@ -3177,7 +3254,8 @@ body{
        border-color:transparent;
        margin-right: 0px;
        margin-top:24px;
-       background-color: var(--company-site-rearbtn);
+       background-color: var(--mobile-filter-bg);
+       color:var(--button-bg);
    }
 
    .hcompnbag{
@@ -3304,7 +3382,7 @@ body{
 
     .jobBag{
         height: 147px;
-        width: 263px;
+        width: fit-content;
         /* border:1px solid greenyellow; */
         position: relative;
         margin-top: 49px;
@@ -3359,7 +3437,7 @@ body{
         height: fit-content;
         margin-left:16px;
         margin-top:40px;
-
+        font-size: 19px;
     }
 
     .spjreqdiv{
@@ -3384,6 +3462,7 @@ body{
         height: fit-content;
         margin-left:15px;
         margin-top:40px;
+        font-size: 19px;
     }
 
     .spseeklstBag{
