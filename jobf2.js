@@ -15,6 +15,8 @@ sToggle.addEventListener('click',toggleSiteTheme);
 //Modal form window event listener
 window.addEventListener('click',outSideClick);
 
+// window.addEventListener('resize',mobileViewMode);
+
 
 $(document).ready(function(){
     // Hide Grid Items Not meant to be loaded 
@@ -130,6 +132,8 @@ $(document).ready(function(){
      //Load Job Spec details
         loadJobSpecs(e.target.id);
     });
+
+    $('#btn_apply').on('click',reloadJobItems);
   
 });
 
@@ -531,7 +535,7 @@ function tabletTextMode(winWidth){
     }
 }
 
-let windowSize=window.matchMedia('(min-width:700px) and (max-width:920px)');
+let windowSize=window.matchMedia('(min-width:768px) and (max-width:920px)');
 tabletTextMode(windowSize);
 windowSize.addEventListener('change',tabletTextMode);
 
@@ -548,9 +552,20 @@ function mobileViewMode(mobileWidth){
     }
 }
 let mobSize=window.matchMedia('(min-width:280px) and (max-width:767px)');
-mobileViewMode(mobSize);
-mobSize.addEventListener('change',mobileViewMode);
+// mobileViewMode(mobSize);
+// mobSize.addEventListener('change',mobileViewMode);
 
 
-//@320px window Size make some changes
+function reloadJobItems(){
+    // reload grid items to grid
+    loadGridItems();
+    $('.unload').hide();
+    $('#btn_jobs').show()
+    $('.specd').hide();
+   
+   
+    $('.spec_show').empty();
+    $('.spec_show').hide();
+    $('.mid_Grid').show();
 
+}
