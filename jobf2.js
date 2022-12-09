@@ -66,6 +66,7 @@ $(document).ready(function(){
 
     $('#sgfilter').on('click',()=>{
         $('#search_wrap').show();
+        $('#search_container').show();
         $('#mobile_text').attr('placeholder', 'Enter job desc...');
     });
 
@@ -222,9 +223,14 @@ export function loadJobSpecs(spId){
         $('#search_container').hide();
         $('#mobile_search').hide();
 
-        // console.log($('#mobile_text').val());
+        // clear all outstanding search values;
+        $('#search_text').val('');
+        $('#full_part').prop('checked',false);
+        $('#location_text').val('');
+        $('#mobile_text').val('');
 
-    // let specId=$('.jobSpecialty').attr('id');
+
+    // lclear the job detail form and display new records;
         $('.spec_show').empty();
         $('.spec_show').show();
 
@@ -533,6 +539,10 @@ function tabletTextMode(winWidth){
          $('#search_text').attr('placeholder','Filter by title,company,expertise...');
          $('#lblfulltime').html('Full Time Only');
     }
+
+    // if ($('#search_container').is(':hidden')){
+    //     $('#search_container').show();
+    // }
 }
 
 let windowSize=window.matchMedia('(min-width:768px) and (max-width:920px)');
@@ -545,27 +555,39 @@ function mobileViewMode(mobileWidth){
     if(mobileWidth.matches){
         $('#search_filter').hide();
         $('#mobile_search').show();
+        $('#search_wrap').hide();
+    }else{
+        $('#mobile_search').hide();
+        $('#search_filter').show();
+        $('#search_container').show();
+        $('#search_wrap').show();
+    }
+}
+let mobSize=window.matchMedia('(min-width:280px) and (max-width:767px)');
+mobileViewMode(mobSize);
+mobSize.addEventListener('change',mobileViewMode);
+
+
+function reloadJobItems(){
+    // reload grid items to grid
+    $('.mid_Grid').empty();
+    $('.specd').hide();
+    $('.spec_show').empty();
+    $('.spec_show').hide();
+
+    loadGridItems();
+
+    $('.unload').hide();
+    $('.mid_Grid').show();
+    $('#newjob').show();
+     $('#btn_jobs').show();
+
+    if (window.matchMedia('(min-width:280px) and (max-width:767px)').matches){
+        $('#search_filter').hide();
+        $('#mobile_search').show();
     }else{
         $('#mobile_search').hide();
         $('#search_filter').show();
         $('#search_container').show();
     }
-}
-let mobSize=window.matchMedia('(min-width:280px) and (max-width:767px)');
-// mobileViewMode(mobSize);
-// mobSize.addEventListener('change',mobileViewMode);
-
-
-function reloadJobItems(){
-    // reload grid items to grid
-    loadGridItems();
-    $('.unload').hide();
-    $('#btn_jobs').show()
-    $('.specd').hide();
-   
-   
-    $('.spec_show').empty();
-    $('.spec_show').hide();
-    $('.mid_Grid').show();
-
 }
