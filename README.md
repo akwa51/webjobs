@@ -11,7 +11,7 @@ The advertised job roles are uploaded from a provided JSON file, along with all 
 
 Deployment This website has been deployed on GitHub with the following link address https://github.com/akwa51/webjobs
 
-The main site is hosted on netlify with the given address as :
+The main site is hosted on netlify with the given address as :https://webjobs.netlify.app/
 
 Explore the various job roles advertised. These are displayed not in any preferred order, and there are multiple job placement advertisements for a given company or location. The job advert indicates how long it has been displayed, the type of job role (fulltime or part time) as well as the company requesting for the given resource.
 
