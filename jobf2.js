@@ -61,6 +61,7 @@ $(document).ready(function(){
 
     $('#mobile_text').focus(()=>{
         $(this).attr('placeholder', 'Filter by title...');
+        $(this).css('outline','none');
     });
 
 
@@ -73,10 +74,12 @@ $(document).ready(function(){
 
     $('#search_filter').on('click',()=>{
         $('#search_text').focus();
+        $('#search_text').css('outline','none');
     });
 
     $('#location_filter').on('click',()=>{
         $('#location_text').focus();
+        $('#location_text').css('outline','none');
     });
 
     $('#btn_jobs').addClass('more_jobs bold_font_70 font_16_2');
@@ -568,6 +571,7 @@ mobileViewMode(mobSize);
 mobSize.addEventListener('change',mobileViewMode);
 
 
+// Function to Return to Initial Job Search Page
 function reloadJobItems(){
     // reload grid items to grid
     $('.mid_Grid').empty();
