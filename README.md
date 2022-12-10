@@ -25,12 +25,12 @@ Explore the various job roles advertised. These are displayed not in any preferr
 
 clicking on the specific job speciality then takes you to another page, where further details are provided on the specific selected job role.
 
-Read on the additional requirements, apply for the job role, or click on the button at the bottom of the page to return to the main job advert page  
+Read on the additional requirements, apply for the job role, or click on the button at the bottom of the page to return to the main job advert page.  
 
 
 ### Contributions
 
-Contributing Team Akwasi Kusi-Appiah
+Contributing Team: Akwasi Kusi-Appiah
 
 
 ### FAQs
