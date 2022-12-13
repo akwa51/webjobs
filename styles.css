@@ -146,7 +146,7 @@ body{
 }
 
 #header_container,#img_container{
-    width: 100vw;
+    width: 100vmax;
     height: 162px;
 }
 
@@ -154,7 +154,7 @@ body{
 .img_head1{
    background: url(./starter-code/assets/desktop/bg-pattern-header.svg); 
    background-repeat: no-repeat;
-   background-size: 100vw 162px;
+   background-size: 100vmax 162px;
 }
 
 .img_sun{
@@ -1082,6 +1082,7 @@ body{
     opacity: 0.5;
     color:var(--text-head);
     background-color: var(--text-bg);
+    outline: none;
 }
 
 #mobile_search svg {
@@ -1258,13 +1259,14 @@ body{
 
     #header_container,#img_container{
         width: 100vmin;
+        height: 160px;
     }
 
     /* Header Caption and Theme */
     .img_head1{
         background: url(./starter-code/assets/tablet/bg-pattern-header.svg); 
         background-repeat: no-repeat;
-        background-size:  100vmin auto;
+        background-size:  100vmin 160px;
     }
 
     #caption_container{
@@ -3547,3 +3549,5 @@ body{
     }
 
   }
+
+
